@@ -53,462 +53,87 @@
   </div>
 </section>
 
-<!-- ============================ 3. TABLEAU DES DOCUMENTS (SIMULATION NAVIGABLE a la charte) ============================ -->
+<!-- ============================ 3. TABLEAU DES DOCUMENTS (MAQUETTE de style, données MOCK) ============================ -->
+<!-- Composant "documents" VP Dive : navigation racine -> dossier -> sous-dossier sur la MÊME page.
+     Header fixe ; ligne "retour/fil d'Ariane" sous le header. Données FICTIVES (le contenu réel
+     est dynamique côté VP Dive). Aligné sur exemples/table-documents-vpdive.html. -->
 <section class="section novi-background" style="padding:24px 0 40px;background:#ffffff;">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-12 col-lg-10">
         <div style="background:#fff;border:1px solid #e3ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);overflow:hidden;">
           <div style="overflow-x:auto;">
-      <div id="membres-list">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:16px 20px;font-weight:600;" colspan="2">Dossier</th>
-              <th style="padding:16px 20px;font-weight:600;text-align:right;white-space:nowrap;">Contenu</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fclub-mantas').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Club Mantas</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">2 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fcdr-du-codir').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">CDR du CoDir</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">25 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fplong-e').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Plongée</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">5 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-26-01-13').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 26-01-13</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">4 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-25-01-15').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 25-01-15</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">4 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-24-01-17').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 24-01-17</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">4 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-22-10-19').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 22-10-19</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">3 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-21-09-31').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 21-09-31</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">3 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fracine').style.display='block';">
-              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
-              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Racine</td>
-              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">2 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fclub-mantas" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fclub-mantas').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>Club Mantas
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Statuts.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Règlement intérieur.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fcdr-du-codir" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fcdr-du-codir').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>CDR du CoDir
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">26-06-20 CR Réunion CD.ENCADRANTS BENEVOLES.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">26-05-28 CR Reunion CD.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">26-02-03 CR Reunion CD.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">26-03-31 CR Réunion CD.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-11-17 CR Reunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-12-17 CR Reunion CD.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-10-06 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-08-26 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-06-17 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-05-06 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-02-26 CR Réunion C.D  .pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-12-17 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">23-07-05 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-03-05 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-01-21 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-11-05CR Réunion C.D  - copie 2.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-10-01CR Réunion C.D  - copie.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-08-28 CR Réunion C.D .pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-06-04 CR Réunion C.D..pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-04-16 CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-01-22 CR Réunion C.D   -  (1).pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-01-10 CR Réunion C.D .pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">23-12-11CR Réunion C.D .pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">23-10-10CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">23-08-28CR Réunion C.D.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fplong-e" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fplong-e').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>Plongée
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">RI-StLin-2024-04-24.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">PLAN_ST_LIN_2026.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Consignes civaux 2023.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Code du Sport.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Tables MN90.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fag-26-01-13" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fag-26-01-13').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 26-01-13
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">PV_AG_2026 - copie.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">graphiques recettes dépenses 2025.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Compte de résultat 2025.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Bilan Moral du président.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fag-25-01-15" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fag-25-01-15').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 25-01-15
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">PV_AG_2025_final2 20250212.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">2024 compte de résultat.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Bilan Moralm President AG 2025.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">modif Statuts MANTAS 2025 copie.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fag-24-01-17" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fag-24-01-17').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 24-01-17
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Bilan resp technique AG 17-01-2024-Magali Agostini.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">RAPPORT MORAL V2-  ASSEMBLEE GENERALE DU 17 JANVIER 2024.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Bilan MANTAS 2022-2023.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">PV - Assemblée Générale du 17-01-2024.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fag-22-10-19" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fag-22-10-19').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 22-10-19
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">BILAN FINANCIER MANTAS 2021-22 AG.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">2022- PV AG.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">2022 - Rapport moral MANTAS PRESIDENTE 19-10 - Saison 2021-2022.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fag-21-09-31" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fag-21-09-31').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 21-09-31
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">2021 - Rapport moral MANTAS PRESIDENTE 20-09 - Saison 2020 - 2021 .pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">2021 - BILAN FINANCIER MANTAS 2020-21 AG.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">2021 - CR - Assemblée Générale du 21-09.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="dir-fracine" style="display:none;">
-        <table style="width:100%;border-collapse:collapse;text-align:left;">
-          <thead>
-            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
-              <th style="padding:14px 20px;font-weight:600;" colspan="3">
-                <a onclick="document.getElementById('dir-fracine').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
-                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>Racine
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">Accès au CSNA sur VPDIVE.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
-              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
-              <td style="padding:12px 20px;color:#243746;font-size:14px;">VPDIVE.pdf</td>
-              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://exemple.org/document-mock.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+            <table style="width:100%;border-collapse:collapse;text-align:left;">
+              <thead>
+                <tr style="background:#062D63;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;">
+                  <th style="padding:14px 20px;font-weight:600;width:64px;">Type</th>
+                  <th style="padding:14px 20px;font-weight:600;">Nom</th>
+                  <th style="padding:14px 20px;font-weight:600;text-align:right;white-space:nowrap;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="mb-body"><!-- rempli en JS --></tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+(function(){
+  // Arborescence FICTIVE (mock) — le contenu réel reste géré dynamiquement par VP Dive.
+  var ROOT = {
+    folders: {
+      "club": { name:"Club Mantas", files:[ {n:"Statuts.pdf"}, {n:"Règlement intérieur.pdf"} ] },
+      "codir": { name:"Comptes rendus du CoDir",
+        folders:{
+          "cr-a": { name:"CR Réunion 2024-2025", files:[ {n:"CR réunion — mars.pdf"}, {n:"CR réunion — janvier.pdf"}, {n:"CR réunion — novembre.pdf"} ] },
+          "cr-b": { name:"CR Réunion 2023-2024", files:[ {n:"CR réunion — juin.pdf"}, {n:"CR réunion — mars.pdf"} ] }
+        },
+        files:[ {n:"Feuille de route du CoDir.pdf"} ] },
+      "ag": { name:"Assemblées générales", files:[ {n:"PV Assemblée Générale.pdf"}, {n:"Rapport moral.pdf"}, {n:"Compte de résultat.pdf"} ] },
+      "plongee": { name:"Plongée", files:[ {n:"Tables MN90.pdf"}, {n:"Consignes de sécurité.pdf"} ] }
+    },
+    files:[ {n:"Guide d'accueil des membres.pdf"}, {n:"Fiche d'inscription.docx", ext:"doc"} ]
+  };
+  var path=[];
+  function nodeAt(keys){ var n=ROOT; for(var i=0;i<keys.length;i++){ n=n.folders[keys[i]]; } return n; }
+  function ic(ext){
+    if(ext==='doc') return '<span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:#eaf1fb;color:#2b579a;font-size:17px;"><span class="fa fa-file-word-o"></span></span>';
+    return '<span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:#fdecea;color:#e0564b;font-size:17px;"><span class="fa fa-file-pdf-o"></span></span>';
+  }
+  var FOLDER_IC='<span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:#eaf5fb;color:#0E66A9;font-size:17px;"><span class="fa fa-folder"></span></span>';
+  var OPEN_BTN='display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#0E66A9;color:#fff;font-size:13px;font-weight:600;border:0;cursor:pointer;font-family:inherit;';
+  var DL_BTN='display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;';
+  function render(){
+    var node=nodeAt(path), html='';
+    if(path.length){
+      var crumb='<a onclick="mbGoTo(0)" style="cursor:pointer;color:#0E66A9;font-weight:600;"><span class="fa fa-arrow-left"></span> Vos documents</a>';
+      var acc=[];
+      for(var i=0;i<path.length;i++){ acc.push(path[i]); var nm=nodeAt(acc.slice()).name;
+        crumb+=' <span style="color:#8a97ab;">/</span> ';
+        crumb+=(i<path.length-1)?'<a onclick="mbGoTo('+(i+1)+')" style="cursor:pointer;color:#0E66A9;font-weight:600;">'+nm+'</a>':'<span style="color:#062D63;font-weight:600;">'+nm+'</span>';
+      }
+      html+='<tr><td colspan="3" style="padding:14px 20px;background:#f2f8fc;font-size:14px;">'+crumb+'</td></tr>';
+    }
+    if(node.folders){ Object.keys(node.folders).forEach(function(k){ var s=node.folders[k];
+      html+='<tr style="border-top:1px solid #eef1f5;"><td style="padding:13px 20px;">'+FOLDER_IC+'</td>'
+        +'<td style="padding:13px 20px;font-weight:600;color:#062D63;font-size:15px;">'+s.name+'</td>'
+        +'<td style="padding:13px 20px;text-align:right;white-space:nowrap;"><button style="'+OPEN_BTN+'" onclick="mbEnter(\''+k+'\')"><span class="fa fa-folder-open-o"></span> Ouvrir</button></td></tr>';
+    }); }
+    if(node.files){ node.files.forEach(function(fl){
+      html+='<tr style="border-top:1px solid #eef1f5;"><td style="padding:13px 20px;">'+ic(fl.ext)+'</td>'
+        +'<td style="padding:13px 20px;color:#243746;font-size:14px;">'+fl.n+'</td>'
+        +'<td style="padding:13px 20px;text-align:right;white-space:nowrap;"><a style="'+DL_BTN+'" href="#" onclick="return false;"><span class="fa fa-download"></span> Télécharger</a></td></tr>';
+    }); }
+    document.getElementById('mb-body').innerHTML=html;
+  }
+  window.mbEnter=function(k){ path.push(k); render(); };
+  window.mbGoTo=function(d){ path=path.slice(0,d); render(); };
+  render();
+})();
+</script>
 
 <!-- ============================ 4. LIENS & REFERENCES (bloc STATIQUE -> tableau stylise) ============================ -->
 <section class="section novi-background" style="padding:40px 0 64px;background:#eef6fb;">
