@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MANTAS 86 — Prévisualisation des pages</title>
+<style>
+  :root{
+    --bleu:#062D63; --cyan:#20C4D8; --bleu-med:#0E66A9;
+    --gris:#5a6a7a; --gris-clair:#8a97ab; --fond:#eef6fb; --bord:#e3ecf3;
+    --ombre:0 10px 30px rgba(6,45,99,.08);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Roboto","Segoe UI",system-ui,sans-serif;color:#243746;background:var(--fond);}
+  header{
+    background:linear-gradient(120deg,var(--bleu-med),var(--bleu));
+    color:#fff;padding:38px 24px 30px;text-align:center;
+  }
+  header h1{margin:0 0 6px;font-family:"Montserrat",sans-serif;font-weight:700;
+    text-transform:uppercase;letter-spacing:.04em;font-size:26px;}
+  header h1 span{color:var(--cyan);}
+  header p{margin:0;color:rgba(255,255,255,.85);font-size:14px;}
+  .divider{width:60px;height:3px;background:var(--cyan);border:0;margin:16px auto 0;border-radius:2px;}
+  main{max-width:960px;margin:0 auto;padding:32px 20px 60px;}
+  .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:26px;}
+  .toolbar label{font-size:13px;color:var(--gris);font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+  select{
+    font:inherit;padding:10px 14px;border:1px solid var(--bord);border-radius:10px;
+    background:#fff;color:var(--bleu);font-weight:600;cursor:pointer;box-shadow:var(--ombre);
+  }
+  .count{margin-left:auto;font-size:13px;color:var(--gris-clair);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+  .card{
+    display:flex;flex-direction:column;background:#fff;border:1px solid var(--bord);
+    border-radius:16px;box-shadow:var(--ombre);overflow:hidden;
+    transition:transform .15s,box-shadow .15s;text-decoration:none;color:inherit;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(6,45,99,.16);}
+  .card.disabled{opacity:.55;pointer-events:none;box-shadow:none;}
+  .card-top{padding:22px 22px 14px;flex:1;}
+  .card h2{margin:0 0 6px;font-family:"Montserrat",sans-serif;font-size:17px;color:var(--bleu);}
+  .card .file{font-size:12px;color:var(--gris-clair);font-family:ui-monospace,Menlo,monospace;word-break:break-all;}
+  .card .url{font-size:12px;color:var(--gris);margin-top:8px;}
+  .card-foot{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 22px;border-top:1px solid var(--fond);
+  }
+  .badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    padding:4px 10px;border-radius:999px;}
+  .b-ok{background:#e3f7f2;color:#0a8d6e;}
+  .b-warn{background:#fff3e0;color:#c47f16;}
+  .b-todo{background:#eef1f5;color:#8a97ab;}
+  .open{font-size:12px;font-weight:700;color:var(--cyan);}
+  .perso{font-size:11px;color:var(--gris-clair);}
+  .note{margin-top:30px;font-size:12px;color:var(--gris-clair);text-align:center;line-height:1.6;}
+  .section-title{font-family:"Montserrat",sans-serif;font-size:13px;text-transform:uppercase;
+    letter-spacing:.08em;color:var(--bleu-med);margin:0 0 14px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>MANTAS 86 — <span>Prévisualisation</span></h1>
+  <p>Refonte du site · pages stylées à coller dans VP Dive</p>
+  <hr class="divider">
+</header>
+
+<main>
+  <div class="toolbar">
+    <label for="folder">Dossier</label>
+    <select id="folder"></select>
+    <span class="count" id="count"></span>
+  </div>
+
+  <p class="section-title">Pages</p>
+  <div class="grid" id="grid"></div>
+
+  <p class="note">
+    Astuce : les pages s'ouvrent en local. Les images du live (uploads VP Dive) ne s'affichent
+    que si tu es en ligne. Statut et « personnalisable ? » sont synchronisés à la main avec
+    <code>SUIVI-PAGES.md</code>.
+  </p>
+</main>
+
+<script>
+  // Données des dossiers. Pour ajouter un dossier plus tard : ajouter une entrée ici.
+  // status : "ok" (fait/aligné), "warn" (à réaligner), "todo" (pas encore stylé)
+  const DATA = {
+    "2026": [
+      { title:"Accueil",          file:"accueil.html",          url:"/w/accueil",           status:"ok",   perso:"oui" },
+      { title:"Baptême",          file:"bapteme.html",          url:"/w/bapteme",           status:"partial", perso:"partiel" },
+      { title:"Contact",          file:"contact.html",          url:"/w/contact-1",         status:"partial", perso:"partiel" },
+      { title:"Nos activités",    file:"nos-activites.html",    url:"/w/nos-activites",     status:"ok", perso:"oui" },
+      { title:"↳ Spot · Saint-Lin", file:"saint-lin.html",       url:"/w/saint-lin",         status:"ok", perso:"oui" },
+      { title:"↳ Spot · Roussay",   file:"roussay.html",         url:"/w/roussay",           status:"ok", perso:"oui" },
+      { title:"↳ Spot · Piscine",   file:"piscine.html",         url:"/w/piscine",           status:"ok", perso:"oui" },
+      { title:"↳ Spot · Civaux",    file:"civaux.html",          url:"/w/civaux",            status:"ok", perso:"oui" },
+      { title:"Qui sommes-nous ?", file:"qui-sommes-nous.html",  url:"/w/qui-sommes-nous-",  status:"ok", perso:"oui" },
+      { title:"Formations",       file:"formation.html",        url:"/w/formation-2",       status:"ok", perso:"oui" },
+      { title:"Infos pratiques",  file:"infos-pratiques.html",  url:"/w/infos-pratiques",   status:"ok", perso:"oui" },
+      { title:"Mentions légales", file:"mentions-legales.html", url:"/v5/public/mentions-legales-1",  status:"ok", perso:"oui" },
+      { title:"Documents · Membres", file:"membres.html",       url:"/v5/public/membres-1",  status:"partial", perso:"partiel" },
+      { title:"Documents · Comité Directeur", file:"comite-directeur.html", url:"/v5/public/comite-directeur", status:"partial", perso:"partiel" },
+      { title:"Documents · Encadrants", file:"encadrants.html", url:"/v5/public/encadrants", status:"partial", perso:"partiel" },
+      { title:"Documents · Gonflage", file:"gonflage.html", url:"/v5/public/gonflage", status:"partial", perso:"partiel" },
+      { title:"Media · Photos", file:"photos.html", url:"/v5/public/photos", status:"ok", perso:"oui" },
+      { title:"Media · Vidéos", file:"videos.html", url:"/v5/public/videos", status:"partial", perso:"partiel" },
+      { title:"Bio · Sur le web", file:"sur-le-web.html", url:"/v5/public/sur-le-web", status:"ok", perso:"oui" },
+      { title:"Bio · Quiz", file:"quiz.html", url:"/v5/public/quiz", status:"ok", perso:"oui" },
+    ],
+    "exemples": [
+      { title:"Composant VP Dive — Documents", file:"table-documents-vpdive.html", url:"réf. style plugin documents", status:"ok", perso:"—" },
+      { title:"Composant VP Dive — Trombinoscope", file:"team-members-vpdive.html", url:"réf. style team-members", status:"ok", perso:"—" },
+      { title:"Composant VP Dive — Formulaire", file:"formulaire-vpdive.html", url:"réf. style rd-mailform", status:"ok", perso:"—" },
+      { title:"Composant VP Dive — Liste d'articles", file:"articles-vpdive.html", url:"réf. style Actus", status:"ok", perso:"—" },
+      { title:"Composant VP Dive — Grille vidéos", file:"demo-videos-style.html", url:"réf. style module vidéo", status:"ok", perso:"—" },
+      { title:"Composant maison — Boutons + hover", file:"choix-boutons.html",  url:"boutons + effets thème", status:"ok", perso:"—" },
+      { title:"Composant maison — Tableau tarifs", file:"table.html",           url:"tableau stylisé", status:"ok", perso:"—" },
+      { title:"Composant maison — Tableau documents", file:"table-documents.html", url:"tableau stylisé", status:"ok", perso:"—" },
+    ],
+  };
+
+  const BADGE = {
+    ok:      { cls:"b-ok",   label:"Fait" },
+    partial: { cls:"b-warn", label:"Partiel" },
+    warn:    { cls:"b-warn", label:"À réaligner" },
+    todo:    { cls:"b-todo", label:"À faire" },
+  };
+
+  const folderSel = document.getElementById("folder");
+  const grid = document.getElementById("grid");
+  const count = document.getElementById("count");
+
+  Object.keys(DATA).forEach(f => {
+    const o = document.createElement("option");
+    o.value = f; o.textContent = f + "/";
+    folderSel.appendChild(o);
+  });
+
+  function render(folder){
+    const pages = DATA[folder] || [];
+    grid.innerHTML = "";
+    let done = 0;
+    pages.forEach(p => {
+      if (p.status === "ok") done++;
+      const b = BADGE[p.status] || BADGE.todo;
+      const disabled = p.status === "todo" ? "disabled" : "";
+      const href = folder + "/" + p.file;
+      const card = document.createElement(p.status==="todo" ? "div" : "a");
+      card.className = "card " + disabled;
+      if (p.status !== "todo") card.href = href;
+      card.innerHTML = `
+        <div class="card-top">
+          <h2>${p.title}</h2>
+          <div class="file">${folder}/${p.file}</div>
+          <div class="url">VP Dive : ${p.url}</div>
+        </div>
+        <div class="card-foot">
+          <span class="badge ${b.cls}">${b.label}</span>
+          <span class="perso">perso. : ${p.perso}</span>
+          ${p.status!=="todo" ? '<span class="open">Ouvrir →</span>' : ''}
+        </div>`;
+      grid.appendChild(card);
+    });
+    count.textContent = done + " / " + pages.length + " pages prêtes";
+  }
+
+  // --- Persistance du dossier sélectionné (localStorage) ---
+  // Au retour sur l'index, on rétablit le dernier dossier consulté (2026 / exemples).
+  const STORE_KEY = "mantas.folder";
+  function setFolder(f){
+    if (!DATA[f]) return;
+    folderSel.value = f;
+    try { localStorage.setItem(STORE_KEY, f); } catch(e){}
+    render(f);
+  }
+  folderSel.addEventListener("change", e => setFolder(e.target.value));
+
+  let initial = null;
+  try { initial = localStorage.getItem(STORE_KEY); } catch(e){}
+  setFolder(DATA[initial] ? initial : folderSel.value);
+</script>
+</body>
+</html>

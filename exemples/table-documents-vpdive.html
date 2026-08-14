@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Démo — Composant « Documents » VP Dive (stylisé)</title>
+<style>
+  :root{
+    --bleu:#062D63; --cyan:#20C4D8; --bleu-med:#0E66A9;
+    --gris:#5a6a7a; --gris-clair:#8a97ab; --fond:#eef6fb; --bord:#e3ecf3;
+    --ombre:0 10px 30px rgba(6,45,99,.08);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Roboto","Segoe UI",system-ui,sans-serif;color:#243746;background:var(--fond);}
+  header{background:linear-gradient(120deg,var(--bleu-med),var(--bleu));color:#fff;padding:34px 24px;text-align:center;}
+  header h1{margin:0 0 6px;font-family:"Montserrat",sans-serif;font-weight:700;font-size:22px;}
+  header h1 span{color:var(--cyan);}
+  header p{margin:0;color:rgba(255,255,255,.85);font-size:13px;max-width:660px;margin:8px auto 0;line-height:1.6;}
+  header code{background:rgba(255,255,255,.14);padding:1px 6px;border-radius:5px;}
+  main{max-width:940px;margin:0 auto;padding:36px 18px 64px;}
+  .section-title{text-align:center;margin:0 0 22px;}
+  .section-title h2{color:var(--bleu);font-family:"Montserrat";margin:0;font-size:22px;}
+  .section-title hr{width:60px;height:3px;border:0;background:var(--cyan);margin:16px auto 0;border-radius:2px;}
+
+  /* --- Carte + tableau documents --- */
+  .doc-card{background:#fff;border:1px solid var(--bord);border-radius:16px;box-shadow:var(--ombre);overflow:hidden;}
+
+  .doc-scroll{overflow-x:auto;}
+  table.doc{width:100%;border-collapse:collapse;text-align:left;}
+  /* En-tête : bande unie, pas de séparation nette entre colonnes (libellés discrets) */
+  table.doc thead th{
+    background:var(--bleu);color:rgba(255,255,255,.72);font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;padding:14px 20px;
+  }
+  table.doc thead th.col-dl{text-align:right;white-space:nowrap;}
+  .col-type{width:64px;padding:13px 20px;}
+  .col-nom{padding:13px 20px;}
+  .col-dl{padding:13px 20px;text-align:right;white-space:nowrap;}
+  .doc-row{border-top:1px solid #eef1f5;}
+  .doc-row:nth-child(even){background:#fafcfe;}
+
+  /* Ligne "retour / fil d'Ariane" DANS le tableau, sous le header (comme le plugin VP Dive) */
+  .doc-nav td{padding:14px 20px;background:#f2f8fc;border-top:0;}
+  .doc-nav .back{display:inline-flex;align-items:center;gap:8px;color:var(--bleu-med);font-weight:600;text-decoration:none;cursor:pointer;}
+  .doc-nav .back:hover{color:var(--cyan);}
+  .doc-nav .sep{color:var(--gris-clair);margin:0 8px;}
+  .doc-nav .cur{color:var(--bleu);font-weight:600;}
+  .doc-ic{width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:17px;}
+  .doc-ic.folder{background:#eaf5fb;color:var(--bleu-med);}
+  .doc-ic.pdf{background:#fdecea;color:#e0564b;}
+  .doc-ic.doc{background:#eaf1fb;color:#2b579a;}
+  .doc-name{font-weight:600;color:var(--bleu);font-size:15px;}
+  .doc-name-file{color:#243746;font-size:14px;}
+  /* Bouton Ouvrir (dossier) */
+  .doc-open{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--bleu-med);color:#fff;font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;border:0;font-family:inherit;}
+  .doc-open:hover{background:#0a558f;}
+  /* Bouton Télécharger (fichier) */
+  .doc-dl{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--cyan);color:#fff;font-size:13px;font-weight:600;text-decoration:none;}
+  .doc-dl:hover{background:#12b2c6;}
+
+  .hide{display:none!important;}
+
+  @media (max-width:767px){
+    .col-type, table.doc thead th:first-child{display:none;}
+  }
+  .note{margin-top:26px;font-size:12.5px;color:var(--gris);line-height:1.7;background:#fff;border:1px solid var(--bord);border-radius:12px;padding:16px 20px;}
+  .note b{color:var(--bleu);}
+  .fa{font-family:"FontAwesome";}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+  <h1>Composant « <span>Documents</span> » VP Dive — proposition stylisée</h1>
+  <p>Reproduction fidèle du composant natif <code>template="documents"</code> (explorateur de fichiers) : colonnes <b>Type / Nom / Action</b>, <b>dossiers et fichiers mêlés</b> à la racine, et navigation <b>sur la même page</b> — l'ouverture d'un dossier ajoute une ligne « retour » <b>sous l'en-tête du tableau</b> (comme le plugin). Données <b>fictives</b> : le composant est dynamique, la maquette ne fixe que le style.</p>
+</header>
+<main>
+  <div class="section-title">
+    <h2>Vos documents</h2>
+    <hr>
+  </div>
+
+  <div class="doc-card">
+
+    <!-- Une seule vue : le HEADER reste toujours en haut ; le CORPS est régénéré à chaque
+         navigation (racine, dossier, sous-dossier…). Hors racine, la 1re ligne du corps est
+         le fil d'Ariane (sous le header), comme le plugin VP Dive. Arborescence sur N niveaux. -->
+    <div class="doc-scroll">
+      <table class="doc">
+        <thead>
+          <tr>
+            <th class="col-type">Type</th>
+            <th class="col-nom">Nom</th>
+            <th class="col-dl">Action</th>
+          </tr>
+        </thead>
+        <tbody id="doc-body"><!-- rempli en JS --></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <b>Note pour l'équipe VP Dive.</b> Cette page est une <b>maquette de style</b> pour le composant
+    <code>documents</code>. Elle reproduit le principe natif&nbsp;: <b>un seul tableau</b> qui bascule
+    <b>sur la même page</b> via le masquage/affichage des lignes (attributs
+    <code>data-depth-paths</code> / <code>data-nav-paths</code> côté plugin). À la <b>racine</b>,
+    dossiers (bouton « Ouvrir ») et fichiers (bouton « Télécharger ») sont <b>mêlés au même niveau</b>.
+    Quand on ouvre un dossier, la ligne « retour » (fil d'Ariane) s'insère <b>sous l'en-tête du tableau</b>,
+    comme le plugin — l'en-tête ne bouge pas. L'arborescence gère <b>plusieurs niveaux</b> (ici 3&nbsp;:
+    racine → <i>Comptes rendus du CoDir</i> → <i>CR Réunion 2024-2025</i> → fichiers)&nbsp;; le fil d'Ariane
+    s'allonge et chaque segment est cliquable pour remonter. En-tête 3 colonnes (<i>Type</i> masquée en
+    mobile via <code>d-none d-md-block</code>), icônes dossier/PDF/Word, puces d'action. Les données sont
+    <b>fictives</b> — côté VP Dive l'arborescence reste alimentée dynamiquement. Proposés à la charte&nbsp;:
+    en-tête sobre, ligne de retour, puces « Ouvrir » (bleu) et « Télécharger » (cyan), survol.
+    <b>À noter</b>&nbsp;: le plugin n'affiche <b>pas</b> de compteur « X fichiers » et rend l'action sous
+    forme d'une simple icône (dossier / téléchargement)&nbsp;; ici les <b>boutons libellés</b> sont une
+    proposition d'amélioration de lisibilité, à valider.
+  </div>
+</main>
+
+<script>
+  // --- Mock d'arborescence sur PLUSIEURS niveaux (démo) : côté VP Dive c'est dynamique ---
+  // Un noeud = { name, folders:{...}, files:[{n, ext}] }. Illustre 3 niveaux :
+  //   racine → "Comptes rendus du CoDir" → "CR Réunion 2024-2025" → fichiers.
+  var ROOT = {
+    folders: {
+      "club-mantas": { name:"Club Mantas", files:[
+        {n:"Statuts.pdf"}, {n:"Règlement intérieur.pdf"}
+      ]},
+      "codir": { name:"Comptes rendus du CoDir",
+        folders:{
+          "cr-2425": { name:"CR Réunion 2024-2025", files:[
+            {n:"CR réunion CD — mars.pdf"}, {n:"CR réunion CD — janvier.pdf"},
+            {n:"CR réunion CD — novembre.pdf"}
+          ]},
+          "cr-2324": { name:"CR Réunion 2023-2024", files:[
+            {n:"CR réunion CD — juin.pdf"}, {n:"CR réunion CD — mars.pdf"}
+          ]}
+        },
+        files:[ {n:"Feuille de route du CoDir.pdf"} ]
+      },
+      "ag": { name:"Assemblées générales", files:[
+        {n:"PV Assemblée Générale.pdf"}, {n:"Rapport moral du président.pdf"}, {n:"Compte de résultat.pdf"}
+      ]},
+      "plongee": { name:"Plongée", files:[
+        {n:"Tables MN90.pdf"}, {n:"Consignes de sécurité.pdf"}, {n:"Plan de Saint-Lin.pdf"}
+      ]}
+    },
+    files:[
+      {n:"Accès au CSNA sur VPDive.pdf"},
+      {n:"Fiche d'inscription.docx", ext:"doc"}
+    ]
+  };
+
+  // Chemin courant = liste de clés (ex: ["codir","cr-2425"]). [] = racine.
+  var path = [];
+
+  function nodeAt(keys){
+    var node = ROOT;
+    for (var i=0;i<keys.length;i++){ node = node.folders[keys[i]]; }
+    return node;
+  }
+  function icon(ext){
+    if (ext==='doc') return '<span class="doc-ic doc"><span class="fa fa-file-word-o"></span></span>';
+    return '<span class="doc-ic pdf"><span class="fa fa-file-pdf-o"></span></span>';
+  }
+
+  function render(){
+    var node = nodeAt(path);
+    var html = '';
+
+    // Fil d'Ariane (sous le header) — seulement hors racine ; chaque segment est cliquable.
+    if (path.length){
+      var crumb = '<a class="back" onclick="goTo(0)"><span class="fa fa-arrow-left"></span> Vos documents</a>';
+      var acc = [];
+      for (var i=0;i<path.length;i++){
+        acc.push(path[i]);
+        var nm = nodeAt(acc.slice()).name;
+        crumb += '<span class="sep">/</span>';
+        if (i < path.length-1){
+          crumb += '<a class="back" onclick="goTo('+(i+1)+')">'+nm+'</a>';
+        } else {
+          crumb += '<span class="cur">'+nm+'</span>';
+        }
+      }
+      html += '<tr class="doc-nav"><td colspan="3">'+crumb+'</td></tr>';
+    }
+
+    // Sous-dossiers (bouton Ouvrir) — pas de compteur (le plugin n'en affiche pas)
+    if (node.folders){
+      Object.keys(node.folders).forEach(function(key){
+        var sub = node.folders[key];
+        html += '<tr class="doc-row">'
+          + '<td class="col-type"><span class="doc-ic folder"><span class="fa fa-folder"></span></span></td>'
+          + '<td class="col-nom"><span class="doc-name">'+sub.name+'</span></td>'
+          + '<td class="col-dl"><button class="doc-open" onclick="enter(\''+key+'\')"><span class="fa fa-folder-open-o"></span> Ouvrir</button></td>'
+          + '</tr>';
+      });
+    }
+    // Fichiers (bouton Télécharger)
+    if (node.files){
+      node.files.forEach(function(f){
+        html += '<tr class="doc-row">'
+          + '<td class="col-type">'+icon(f.ext)+'</td>'
+          + '<td class="col-nom"><span class="doc-name-file">'+f.n+'</span></td>'
+          + '<td class="col-dl"><a class="doc-dl" href="#" onclick="return false;"><span class="fa fa-download"></span> Télécharger</a></td>'
+          + '</tr>';
+      });
+    }
+    document.getElementById('doc-body').innerHTML = html;
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function enter(key){ path.push(key); render(); }   // ouvrir un (sous-)dossier
+  function goTo(depth){ path = path.slice(0, depth); render(); }  // remonter via le fil d'Ariane
+
+  render();
+</script>
+
+<!-- NAV LOCALE (dev only) — retour index ; ne s'affiche qu'en localhost -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

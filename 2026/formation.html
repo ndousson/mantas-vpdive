@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formations — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "FORMATIONS" (refonte "épuré / moderne")
+     À coller dans le bloc de contenu de la page "Formation" du builder VP Dive.
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - Page 100% statique (aucun composant dynamique) : cartes reconstruites à la charte
+       sur le modèle des cartes-photo de l'accueil.
+     - Images/liens live en chemins ABSOLUS pour le rendu local => remettre les chemins
+       RELATIFS côté VP Dive.
+     - Banniere hero : image Unsplash placeholder (TODO-IMAGE).
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE (page secondaire : plus court) ============================ -->
+<!-- TODO-IMAGE : formation / plongeurs en apprentissage (éditable via le module image VP Dive) -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1560275619-4662e36fa65c?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Nos <span style="color:#20C4D8;">formations</span></h1>
+        <p class="subtitle-variant-3" style="margin:0 0 28px;color:rgba(255,255,255,.92);font-weight:400;">Des plus petits aux plus grands</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+          <a class="btn btn-lg btn-effect-ujarak" href="/w/contact-1?0=1" target="_parent" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Rejoindre le club</span></a>
+          <a class="btn btn-lg btn-effect-ujarak" href="/w/bapteme?0=1" target="_parent" style="background:transparent;border:2px solid #fff;color:#fff;font-weight:700;margin:0;"><span>Baptême</span></a>
+        </div>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 24px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Un parcours pour chacun</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;">Du premier baptême aux brevets d'encadrement, le club vous accompagne à chaque étape du cursus FFESSM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. GRILLE DES FORMATIONS (cartes-photo à la charte) ============================ -->
+<section class="section novi-background" style="padding:24px 0 64px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- 1 — Baptême -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/uploads/menus/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/initiateur800x500.jpg" alt="Baptême de plongée" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Baptême de plongée</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Votre première expérience se déroule en piscine, en toute sécurité, sous l'œil d'un moniteur du club agréé.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 — Formation enfants -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/media/plongeeenfant-1000x625.jpg" alt="Formation enfants" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation enfants</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Votre enfant se sent comme un poisson dans l'eau ? Il est peut-être temps de lui faire découvrir les fonds marins.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 — Secourisme (RIFAP) -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/media/rifap-912x570.jpg" alt="Formation secourisme RIFAP" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation secourisme</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;"><strong style="color:#062D63;">R</strong>éactions et <strong style="color:#062D63;">I</strong>ntervention <strong style="color:#062D63;">F</strong>ace aux <strong style="color:#062D63;">A</strong>ccidents subaquatiques — spécialité <strong style="color:#062D63;">P</strong>longée (RIFAP), obligatoire pour préparer le niveau 3.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 — Niveau 1 -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/uploads/menus/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/n1576x360.jpg" alt="Formation niveau 1" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation niveau 1</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Le niveau 1 permet de plonger encadré jusqu'à 20 m (PE20).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 — Niveau 2 -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/media/n21072x671-1072x669.jpg" alt="Formation niveau 2" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation niveau 2</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Après le niveau 1, perfectionnez-vous avec le niveau 2 : plongée encadrée à 40 m (PE40) et autonomie à 20 m (PA20).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 — Niveau 3 -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/media/n3-1076x672.jpg" alt="Formation niveau 3" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation niveau 3</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Le plus haut niveau de plongeur : le niveau 3 vous permet de plonger en autonomie jusqu'à 60 m (PA60).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 — Niveau 4 -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/media/unsplash-photo-800x500.jpg" alt="Formation niveau 4" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation niveau 4</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Après le niveau 3, devenez guide de palanquée et encadrez les niveaux 1 (PE20) et 2 (PE40), préparé au sein du club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 — Initiateur -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/media/unsplash-photo-1-1080x675.jpg" alt="Formation initiateur" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation initiateur</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Dès le niveau 2 et le RIFAP en poche, devenez acteur de la formation en passant l'initiateur, préparé au sein du club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 — T.I.V -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/media/tiv-335x209.jpg" alt="Formation T.I.V" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation T.I.V</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Réalisez l'inspection visuelle des bouteilles et la révision des robinets : une part active au fonctionnement du club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 — Nitrox -->
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/Ndi72uJZ65fCaYrKpoq1UVOTxzkbceljIXHtLM8A4Qy/media/media/nitrox1024x9632-1024x639.jpg" alt="Formation Nitrox" style="display:block;width:100%;height:190px;object-fit:cover;" />
+          <div style="padding:24px 22px;text-align:left;">
+            <h5 style="margin:0 0 8px;color:#062D63;text-transform:uppercase;font-size:15px;">Formation Nitrox</h5>
+            <p style="color:#5a6a7a;margin:0 0 14px;">Complétez votre formation avec le Nitrox pour plonger à l'air enrichi sur les sites qui le proposent.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 4. RESSOURCES EN LIGNE FFESSM (déportées des ex-pages V5 : Formation N1, Les détendeurs, RIFAP) ============================ -->
+<!-- Blocs texte+image alternés à la charte (modèle "feature-box-3" du site V5).
+     Liens externes (cours FFESSM en ligne) + PDF livret RIFAP conservés en absolu.
+     Images live en chemins ABSOLUS => remettre en relatif côté VP Dive. -->
+<section class="section novi-background" style="padding:64px 0;background:#eef6fb;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center" style="margin-bottom:12px;">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Ressources en ligne</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 14px;">
+        <p style="color:#5a6a7a;margin:0;">Révisez à votre rythme grâce aux cours en ligne de la FFESSM et aux documents de référence du club.</p>
+      </div>
+    </div>
+
+    <!-- Bloc 1 — Formation N1 (texte gauche / image droite) -->
+    <div class="row justify-content-center" style="display:flex;flex-wrap:wrap;align-items:stretch;margin-top:24px;">
+      <div class="col-sm-12 col-lg-6 text-left" style="margin-bottom:24px;display:flex;">
+        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:30px 32px;box-shadow:0 10px 30px rgba(6,45,99,.06);height:100%;width:100%;">
+          <h3 style="color:#062D63;margin:0 0 14px;font-size:22px;">Formation en ligne FFESSM — Niveau 1</h3>
+          <p style="color:#5a6a7a;margin:0 0 18px;line-height:1.8;">Ce cours fournit les connaissances de base pour plonger encadré en toute sécurité jusqu'à 20 mètres (niveau 1).</p>
+          <p style="color:#5a6a7a;margin:0 0 22px;line-height:1.8;font-size:14px;"><strong style="color:#062D63;">Se connecter au site de la FFESSM :</strong><br>— Nom d'utilisateur : votre n° de licence<br>— Mot de passe : à créer lors de la première connexion</p>
+          <a class="btn btn-effect-ujarak" href="https://formation.ffessm.fr/fr/cours/plonger-avec-la-ffessm-niveau-1-1" target="_blank" style="align-self:flex-start;margin-top:auto;background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;"><span>Accéder au cours</span></a>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6" style="margin-bottom:24px;">
+        <img src="https://vpdive.com/l/builder/app/projects/268/ZQvliumG5s6K9bY4tMfEOeCw0JFcaTD1I2knBSAzUrp/media/media/coursn1-413x300.png" alt="Cours en ligne Niveau 1" style="display:block;width:100%;height:100%;min-height:240px;object-fit:cover;border-radius:16px;box-shadow:0 14px 40px rgba(20,40,80,.10);" />
+      </div>
+    </div>
+
+    <!-- Bloc 2 — Les détendeurs (image gauche / texte droite) -->
+    <div class="row justify-content-center" style="display:flex;flex-wrap:wrap;align-items:stretch;margin-top:12px;">
+      <div class="col-sm-12 col-lg-6" style="margin-bottom:24px;">
+        <img src="https://vpdive.com/l/builder/app/projects/268/RbYqLFHnjBfhC3yNQiM1wXD0grUEvpA89dTa7zPJxSu/media/media/unsplash-photo-700x509.jpg" alt="Les principes de fonctionnement des détendeurs" style="display:block;width:100%;height:100%;min-height:240px;object-fit:cover;border-radius:16px;box-shadow:0 14px 40px rgba(20,40,80,.10);" />
+      </div>
+      <div class="col-sm-12 col-lg-6 text-left" style="margin-bottom:24px;display:flex;">
+        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:30px 32px;box-shadow:0 10px 30px rgba(6,45,99,.06);height:100%;width:100%;">
+          <h3 style="color:#062D63;margin:0 0 14px;font-size:22px;">Les principes de fonctionnement des détendeurs</h3>
+          <p style="color:#5a6a7a;margin:0 0 18px;line-height:1.8;">Ce cours en ligne FFESSM apporte les connaissances nécessaires à la compréhension des principes de fonctionnement des détendeurs.</p>
+          <p style="color:#5a6a7a;margin:0 0 22px;line-height:1.8;font-size:14px;"><strong style="color:#062D63;">Se connecter au site de la FFESSM :</strong><br>— Nom d'utilisateur : votre n° de licence<br>— Mot de passe : à créer lors de la première connexion</p>
+          <a class="btn btn-effect-ujarak" href="https://formation.ffessm.fr/cours/cours-sequence/les-principes-de-fonctionnement-des-detendeurs" target="_blank" style="align-self:flex-start;margin-top:auto;background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;"><span>Accéder au cours</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloc 3 — Livret RIFAP (texte gauche / image droite) -->
+    <div class="row justify-content-center" style="display:flex;flex-wrap:wrap;align-items:stretch;margin-top:12px;">
+      <div class="col-sm-12 col-lg-6 text-left" style="margin-bottom:24px;display:flex;">
+        <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:30px 32px;box-shadow:0 10px 30px rgba(6,45,99,.06);height:100%;width:100%;">
+          <h3 style="color:#062D63;margin:0 0 14px;font-size:22px;">Livret RIFAP</h3>
+          <p style="color:#5a6a7a;margin:0 0 22px;line-height:1.8;">Cet extrait du MFT définit les capacités liées au RIFAP (Réactions et Intervention Face aux Accidents de Plongée), avec des précisions à consulter régulièrement.</p>
+          <a class="btn btn-effect-ujarak" href="https://vpdive.com/uploads/menus/268/2MTQ5WknbDG1fBAOgydIJor0PFwUtXEjv74hqKuplYx/media/rifapreactionsetinterventionfaceaunaccidentdeplongee.pdf" target="_blank" style="align-self:flex-start;margin-top:auto;background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;"><span>Consulter le livret</span></a>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6" style="margin-bottom:24px;">
+        <img src="https://vpdive.com/l/builder/app/projects/268/2MTQ5WknbDG1fBAOgydIJor0PFwUtXEjv74hqKuplYx/media/media/rifap-235x171.png" alt="Livret RIFAP" style="display:block;width:100%;height:100%;min-height:240px;object-fit:cover;border-radius:16px;box-shadow:0 14px 40px rgba(20,40,80,.10);" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

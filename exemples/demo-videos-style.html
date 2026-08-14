@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DÉMO STYLE · Grille vidéos — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "MEDIA / VIDÉOS" (refonte "épuré / moderne")
+     =========================================================================
+     - 8 vidéos YouTube. Sur le live : vignettes "thumbnail-classic" +
+       lightGallery VIDÉO (data-lightgallery="dynamic", src=lien youtu.be) →
+       la vidéo s'ouvre en lecteur au clic.
+     - Ici on garde le mécanisme lightGallery : conteneur data-lightgallery="group"
+       + chaque carte <a data-lightgallery="item" href="LIEN_YOUTUBE"> (lightGallery
+       détecte YouTube et embarque le lecteur). Overlay bouton "play" sur la vignette.
+     - Style INLINE uniquement. Images live en ABSOLU => remettre en relatif côté VP Dive.
+       Pour AJOUTER une vidéo : dupliquer un bloc <div class="col-sm-6">.
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE ============================ -->
+<!-- TODO-IMAGE : ambiance sous-marine -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Nos <span style="color:#20C4D8;">vidéos</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Les plongées du club filmées par nos vidéastes</p>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 24px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Les vidéos du club</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;">Épaves, faune sous-marine et croisières, filmées lors de nos sorties. Cliquez sur une vignette pour lancer la vidéo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. GRILLE DE VIDÉOS (cartes + lecture lightGallery YouTube) ============================ -->
+<section class="section novi-background" style="padding:24px 0 64px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center" data-lightgallery="group">
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://youtu.be/wxmzBNK6Gyg" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <div style="position:relative;">
+            <img src="https://vpdive.com/uploads/menus/268/uxGIK2zG5FgWkViuQxVHCVFMqkySwHSV/media/nettoietonclain.jpg" alt="Nettoie ton clain — 10 sept. 2022" style="display:block;width:100%;height:260px;object-fit:cover;" />
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(6,45,99,.62);display:flex;align-items:center;justify-content:center;">
+              <span class="fa fa-play" style="color:#fff;font-size:22px;margin-left:4px;"></span>
+            </span>
+          </div>
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.35;">Nettoie ton clain — 10 sept. 2022<br><span style="font-weight:400;color:rgba(255,255,255,.7);font-size:13px;">Yann PLATON</span></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://youtu.be/tt8sbxnJOUE" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <div style="position:relative;">
+            <img src="https://vpdive.com/uploads/menus/268/uxGIK2zG5FgWkViuQxVHCVFMqkySwHSV/media/micr0371gfgf.jpg" alt="Corbs et ressac — L'Estartit 2021" style="display:block;width:100%;height:260px;object-fit:cover;" />
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(6,45,99,.62);display:flex;align-items:center;justify-content:center;">
+              <span class="fa fa-play" style="color:#fff;font-size:22px;margin-left:4px;"></span>
+            </span>
+          </div>
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.35;">Corbs et ressac — L'Estartit 2021<br><span style="font-weight:400;color:rgba(255,255,255,.7);font-size:13px;">Yann PLATON</span></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://youtu.be/N4LCQzq8Jvk" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <div style="position:relative;">
+            <img src="https://vpdive.com/uploads/menus/268/uxGIK2zG5FgWkViuQxVHCVFMqkySwHSV/media/micr0281gfgf.jpg" alt="Murène — L'Estartit 2021" style="display:block;width:100%;height:260px;object-fit:cover;" />
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(6,45,99,.62);display:flex;align-items:center;justify-content:center;">
+              <span class="fa fa-play" style="color:#fff;font-size:22px;margin-left:4px;"></span>
+            </span>
+          </div>
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.35;">Murène — L'Estartit 2021<br><span style="font-weight:400;color:rgba(255,255,255,.7);font-size:13px;">Yann PLATON</span></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://youtu.be/2dOzjpQmmv0" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <div style="position:relative;">
+            <img src="https://vpdive.com/uploads/menus/268/uxGIK2zG5FgWkViuQxVHCVFMqkySwHSV/media/micr0302gfgf.jpg" alt="Rhizostome — L'Estartit 2021" style="display:block;width:100%;height:260px;object-fit:cover;" />
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(6,45,99,.62);display:flex;align-items:center;justify-content:center;">
+              <span class="fa fa-play" style="color:#fff;font-size:22px;margin-left:4px;"></span>
+            </span>
+          </div>
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.35;">Rhizostome — L'Estartit 2021<br><span style="font-weight:400;color:rgba(255,255,255,.7);font-size:13px;">Yann PLATON</span></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://youtu.be/DnZQEWa4Osg" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <div style="position:relative;">
+            <img src="https://vpdive.com/uploads/menus/268/uxGIK2zG5FgWkViuQxVHCVFMqkySwHSV/media/micr8760convertimage.jpg" alt="Mantas — Maldives 2020" style="display:block;width:100%;height:260px;object-fit:cover;" />
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(6,45,99,.62);display:flex;align-items:center;justify-content:center;">
+              <span class="fa fa-play" style="color:#fff;font-size:22px;margin-left:4px;"></span>
+            </span>
+          </div>
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.35;">Mantas — Maldives 2020<br><span style="font-weight:400;color:rgba(255,255,255,.7);font-size:13px;">Yann PLATON</span></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://youtu.be/jeWFpnnU0gc" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <div style="position:relative;">
+            <img src="https://vpdive.com/uploads/menus/268/uxGIK2zG5FgWkViuQxVHCVFMqkySwHSV/media/micr9125.jpg" alt="Mantas de nuit — Maldives 2020" style="display:block;width:100%;height:260px;object-fit:cover;" />
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(6,45,99,.62);display:flex;align-items:center;justify-content:center;">
+              <span class="fa fa-play" style="color:#fff;font-size:22px;margin-left:4px;"></span>
+            </span>
+          </div>
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.35;">Mantas de nuit — Maldives 2020<br><span style="font-weight:400;color:rgba(255,255,255,.7);font-size:13px;">Yann PLATON</span></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://youtu.be/0GQyX7b-JgA" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <div style="position:relative;">
+            <img src="https://vpdive.com/uploads/menus/268/uxGIK2zG5FgWkViuQxVHCVFMqkySwHSV/media/micr2226-1.jpg" alt="Croisière Égypte Nord — avril 2018" style="display:block;width:100%;height:260px;object-fit:cover;" />
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(6,45,99,.62);display:flex;align-items:center;justify-content:center;">
+              <span class="fa fa-play" style="color:#fff;font-size:22px;margin-left:4px;"></span>
+            </span>
+          </div>
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.35;">Croisière Égypte Nord — avril 2018<br><span style="font-weight:400;color:rgba(255,255,255,.7);font-size:13px;">Laurence BLANC</span></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://youtu.be/UKZwbnDrrOg" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <div style="position:relative;">
+            <img src="https://vpdive.com/l/builder/app/projects/268/uxGIK2zG5FgWkViuQxVHCVFMqkySwHSV/media/media/colera-2-375x281.jpg" alt="Colera" style="display:block;width:100%;height:260px;object-fit:cover;" />
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(6,45,99,.62);display:flex;align-items:center;justify-content:center;">
+              <span class="fa fa-play" style="color:#fff;font-size:22px;margin-left:4px;"></span>
+            </span>
+          </div>
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.35;">Colera</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+<!-- NAV LOCALE (dev only) — retour index ; ne s'affiche qu'en localhost -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+
+</body></html>

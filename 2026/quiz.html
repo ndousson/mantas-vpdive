@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biologie Sous Marine · Quiz — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "BIOLOGIE SOUS MARINE / QUIZ" (refonte épuré/moderne)
+     =========================================================================
+     - Contenu = sélection de quiz bio en ligne (CIBPL) pour tester ses
+       connaissances. Chaque carte : image de couverture (badge "Quiz" cyan) +
+       TITRE cliquable (ouvre le quiz, target=_parent comme l'original) + sous-titre.
+     - "ASTER QUIZZ" n'a PAS de lien côté site d'origine => carte non cliquable,
+       reproduite fidèlement (image + libellé), sans <a>.
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - .row forcée en flex (align-items:stretch) => cartes de MÊME HAUTEUR.
+     - Images live en chemins ABSOLUS => remettre en relatif côté VP Dive.
+       Pour AJOUTER un quiz : dupliquer un bloc <div class="col-*"> ci-dessous.
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE ============================ -->
+<!-- TODO-IMAGE : ambiance récif / vie sous-marine -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Quiz <span style="color:#20C4D8;">Bio</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Testez vos connaissances sur la vie sous-marine</p>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 40px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">À vous de jouer&nbsp;!</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;line-height:1.9;">Une sélection de <strong style="color:#062D63;">petits quiz de biologie sous-marine</strong> pour apprendre en s'amusant. La plupart nous viennent tout droit de Bretagne, via le CIBPL. Cliquez sur une carte pour lancer le quiz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. GRILLE DES QUIZ ============================ -->
+<section class="section novi-background" style="padding:16px 0 64px;background:#ffffff;">
+  <div class="container">
+    <!-- .row forcée en flex pour des cartes de MÊME HAUTEUR (le thème rend .row en block) -->
+    <div class="row justify-content-center" style="display:flex;flex-wrap:wrap;align-items:stretch;">
+
+      <!-- ---- Quiz : Laminaires ---- -->
+      <div class="col-sm-6 col-lg-4" style="display:flex;margin-bottom:30px;">
+        <div style="display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid #eef1f5;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(6,45,99,.08);text-align:left;">
+          <a href="https://www.cibpl.fr/environnement-et-biologie/quiz-la-foret-de-laminaires" target="_parent" style="position:relative;display:block;">
+            <img src="https://vpdive.com/l/builder/app/projects/268/IoTRPi32n7ed9kCxwrLKD6qMfApms4yFHVWa8jgOYEN/media/media/quizlaminaires-672x351.jpg" alt="Quiz — Laminaires" style="display:block;width:100%;height:190px;object-fit:cover;" />
+            <span style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(32,196,216,.94);color:#062D63;font:700 11px/1 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px;border-radius:999px;"><span class="fa fa-question-circle"></span> Quiz</span>
+          </a>
+          <div style="display:flex;flex-direction:column;flex:1;padding:20px 22px 22px;">
+            <h5 style="margin:0 0 6px;"><a href="https://www.cibpl.fr/environnement-et-biologie/quiz-la-foret-de-laminaires" target="_parent" style="color:#062D63;font-weight:700;">Laminaires</a></h5>
+            <p style="color:#5a6a7a;margin:0;line-height:1.75;font-size:14px;">Un petit quiz venu de Bretagne.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Quiz : Défense des animaux marins ---- -->
+      <div class="col-sm-6 col-lg-4" style="display:flex;margin-bottom:30px;">
+        <div style="display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid #eef1f5;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(6,45,99,.08);text-align:left;">
+          <a href="https://www.cibpl.fr/environnement-et-biologie/quiz-la-defense-des-animaux-marins/" target="_parent" style="position:relative;display:block;">
+            <img src="https://vpdive.com/l/builder/app/projects/268/IoTRPi32n7ed9kCxwrLKD6qMfApms4yFHVWa8jgOYEN/media/media/quizdefense-1920x1003.jpg" alt="Quiz — Défense des animaux marins" style="display:block;width:100%;height:190px;object-fit:cover;" />
+            <span style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(32,196,216,.94);color:#062D63;font:700 11px/1 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px;border-radius:999px;"><span class="fa fa-question-circle"></span> Quiz</span>
+          </a>
+          <div style="display:flex;flex-direction:column;flex:1;padding:20px 22px 22px;">
+            <h5 style="margin:0 0 6px;"><a href="https://www.cibpl.fr/environnement-et-biologie/quiz-la-defense-des-animaux-marins/" target="_parent" style="color:#062D63;font-weight:700;">Défense des animaux marins</a></h5>
+            <p style="color:#5a6a7a;margin:0;line-height:1.75;font-size:14px;">Un petit quiz venu de Bretagne.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Quiz : La vie en communauté ---- -->
+      <div class="col-sm-6 col-lg-4" style="display:flex;margin-bottom:30px;">
+        <div style="display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid #eef1f5;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(6,45,99,.08);text-align:left;">
+          <a href="https://www.cibpl.fr/seance/la-vie-en-communaute/" target="_parent" style="position:relative;display:block;">
+            <img src="https://vpdive.com/l/builder/app/projects/268/IoTRPi32n7ed9kCxwrLKD6qMfApms4yFHVWa8jgOYEN/media/media/communaute-650x340.jpg" alt="Quiz — La vie en communauté" style="display:block;width:100%;height:190px;object-fit:cover;" />
+            <span style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(32,196,216,.94);color:#062D63;font:700 11px/1 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px;border-radius:999px;"><span class="fa fa-question-circle"></span> Quiz</span>
+          </a>
+          <div style="display:flex;flex-direction:column;flex:1;padding:20px 22px 22px;">
+            <h5 style="margin:0 0 6px;"><a href="https://www.cibpl.fr/seance/la-vie-en-communaute/" target="_parent" style="color:#062D63;font-weight:700;">La vie en communauté</a></h5>
+            <p style="color:#5a6a7a;margin:0;line-height:1.75;font-size:14px;">Un petit quiz venu de Bretagne.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Quiz : Vivre sous les mers ---- -->
+      <div class="col-sm-6 col-lg-4" style="display:flex;margin-bottom:30px;">
+        <div style="display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid #eef1f5;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(6,45,99,.08);text-align:left;">
+          <a href="https://www.cibpl.fr/seance/vivre-sous-les-mers/" target="_parent" style="position:relative;display:block;">
+            <img src="https://vpdive.com/l/builder/app/projects/268/IoTRPi32n7ed9kCxwrLKD6qMfApms4yFHVWa8jgOYEN/media/media/souslesmers-600x314.jpg" alt="Quiz — Vivre sous les mers" style="display:block;width:100%;height:190px;object-fit:cover;" />
+            <span style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(32,196,216,.94);color:#062D63;font:700 11px/1 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px;border-radius:999px;"><span class="fa fa-question-circle"></span> Quiz</span>
+          </a>
+          <div style="display:flex;flex-direction:column;flex:1;padding:20px 22px 22px;">
+            <h5 style="margin:0 0 6px;"><a href="https://www.cibpl.fr/seance/vivre-sous-les-mers/" target="_parent" style="color:#062D63;font-weight:700;">Vivre sous les mers</a></h5>
+            <p style="color:#5a6a7a;margin:0;line-height:1.75;font-size:14px;">Un petit quiz venu de Bretagne.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Quiz : ASTER QUIZZ (aucun lien côté site => carte non cliquable) ---- -->
+      <div class="col-sm-6 col-lg-4" style="display:flex;margin-bottom:30px;">
+        <div style="display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid #eef1f5;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(6,45,99,.08);text-align:left;">
+          <div style="position:relative;display:block;">
+            <img src="https://vpdive.com/uploads/menus/268/IoTRPi32n7ed9kCxwrLKD6qMfApms4yFHVWa8jgOYEN/media/capturedecran272202522339www.facebook.com.jpeg" alt="Aster Quizz" style="display:block;width:100%;height:190px;object-fit:cover;" />
+            <span style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(32,196,216,.94);color:#062D63;font:700 11px/1 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px;border-radius:999px;"><span class="fa fa-question-circle"></span> Quiz</span>
+          </div>
+          <div style="display:flex;flex-direction:column;flex:1;padding:20px 22px 22px;">
+            <h5 style="margin:0 0 6px;color:#062D63;font-weight:700;">ASTER QUIZZ</h5>
+            <p style="color:#5a6a7a;margin:0;line-height:1.75;font-size:14px;">Testez vos connaissances bio.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <p style="color:#8a97ab;font-size:13px;margin:6px 0 0;font-style:italic;">Les quiz sont hébergés sur des sites partenaires (CIBPL) et s'ouvrent dans un nouvel onglet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

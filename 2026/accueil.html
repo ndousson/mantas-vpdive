@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prévisualisation — Accueil MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+              <header class="page-header">
+  <div class="rd-navbar-wrap">
+    <nav class="rd-navbar rd-navbar-top-panel-light novi-background" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fullwidth" data-lg-layout="rd-navbar-fullwidth" data-stick-up-clone="true" data-md-stick-up-offset="90px" data-lg-stick-up-offset="90px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
+      <div class="rd-navbar-inner">
+        <div class="rd-navbar-nav-wrap">
+          <ul class="rd-navbar-nav">
+            <script src="/files/js/megamenu.js"></script>
+
+                          <li >
+        <a href="/w/accueil-2" >Accueil</a>
+              </li>
+                                <li >
+        <a href="/w/bapteme" >Baptême</a>
+              </li>
+                                                                                                                                                                                          <li  class="rd-navbar--has-dropdown rd-navbar-submenu">
+        <a href="#" style="cursor: default" >Le Club</a>
+                              <ul class="rd-navbar-dropdown">                                               
+                <li >
+                  <a href="/w/qui-sommes-nous-" > Qui Sommes Nous ?</a>
+                                  </li>
+                                              
+                <li >
+                  <a href="/w/infos-pratiques" > Infos Pratiques</a>
+                                  </li>
+                                              
+                <li >
+                  <a href="/w/formation" > Formation</a>
+                                  </li>
+                                              
+                <li >
+                  <a href="/w/entrainement-1" > Entraînement</a>
+                                  </li>
+                                              
+                <li >
+                  <a href="/f/office" > Comité</a>
+                                  </li>
+                          </ul>
+                        </li>
+                                                          </ul>
+        </div>
+        <div class="rd-navbar-panel">
+          <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+          <div class="rd-navbar-brand"><a class="brand-name" href="/"><img src="https://mantas86.vpdive.com/uploads/cache/logo_84/uploads/logo/6667f724ed975.png" /></a></div>
+        </div>
+        <div class="rd-navbar-top-panel">
+          <div class="rd-navbar-top-panel-toggle" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></div>
+          <div class="rd-navbar-top-panel-content">
+            <ul class="rd-navbar-nav">
+              <script src="/files/js/megamenu.js"></script>
+
+                                                        <li >
+        <a href="/w/news" >News</a>
+              </li>
+                                <li >
+        <a href="/w/sorties-voyages-stages" >Sorties/voyages/Stages</a>
+              </li>
+                                <li >
+        <a href="/w/contact-1" >Contact</a>
+              </li>
+                              <li>
+          <a href="/login">
+            <i class="fa fa-fw fa-lock"></i> Connexion
+          </a>
+        </li>
+                        </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE D'ACCUEIL (refonte "épuré / moderne", HTML uniquement)
+     À coller dans le bloc de contenu de la page "Accueil" du builder VPDive.
+     - N'utilise que des classes du thème Novi + du style inline (le seul levier
+       disponible puisque custom.css n'est pas modifiable).
+     - Images : Unsplash (libres, licence Unsplash). Remplace-les par tes photos
+       du club quand tu les auras : cherche "TODO-IMAGE" ci-dessous.
+     - Blocs dynamiques (agenda / carte) conservés à l'identique.
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO STATIQUE (sans slider) ============================ -->
+<!-- Bannière du club (raie manta) posée en BACKGROUND, comme dans VP Dive.
+     aspect-ratio = ratio réel de l'image (1983x793) => cadrage stable à toute résolution,
+     background-size:cover => remplit la largeur, jamais de bande ni de déformation. -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; background-image:url('../banniere.png'); background-position:center center; background-size:cover; background-repeat:no-repeat; aspect-ratio:1983 / 793;">
+  <!-- Overlay dégradé -->
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <!-- Wrapper flex maison : centrage H+V fiable (la .row du thème est en display:block ici).
+       height:100% pour occuper la hauteur imposée par aspect-ratio. -->
+  <div class="container context-dark text-center" style="position:relative;height:100%;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+    <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+    <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Découvrez la <span style="color:#20C4D8;">plongée</span></h1>
+    <p class="subtitle-variant-3" style="margin:0 0 28px;color:rgba(255,255,255,.92);font-weight:400;">Club FFESSM à Poitiers depuis 1989 — Passion · Partage · Exploration</p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <a class="btn btn-lg btn-effect-ujarak" href="/w/inscription?0=1" target="_parent" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Je m'inscris</span></a>
+      <a class="btn btn-lg btn-effect-ujarak" href="/w/bapteme" target="_parent" style="background:transparent;border:2px solid #fff;color:#fff;font-weight:700;margin:0;"><span>Essayer un baptême</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 2. BANDEAU STATS (cartes légères) ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#ffffff;">
+  <div class="container">
+    <!-- Bandeau stats : flex-wrap (la grille col-* du thème ne met pas les blocs côte à côte ici) :
+         4 sur desktop, s'empile en 2/1 colonnes sur petit écran. text-center sur chaque bloc. -->
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+
+      <div style="flex:1 1 140px;text-align:center;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:32px 18px;height:100%;box-shadow:0 10px 30px rgba(20,40,80,.06);">
+          <div class="novi-icon fa-anchor fa" style="color:#20C4D8;font-size:38px;margin-bottom:14px;"></div>
+          <h6 style="margin:0;color:#243746;line-height:1.4;">Le club plonge<br>depuis <strong style="color:#062D63;">1989</strong></h6>
+        </div>
+      </div>
+
+      <div style="flex:1 1 140px;text-align:center;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:32px 18px;height:100%;box-shadow:0 10px 30px rgba(20,40,80,.06);">
+          <div class="novi-icon fa-users fa" style="color:#20C4D8;font-size:38px;margin-bottom:14px;"></div>
+          <h6 style="margin:0;color:#243746;line-height:1.4;"><strong style="color:#062D63;">130</strong> plongeurs<br>au club</h6>
+        </div>
+      </div>
+
+      <div style="flex:1 1 140px;text-align:center;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:32px 18px;height:100%;box-shadow:0 10px 30px rgba(20,40,80,.06);">
+          <div class="novi-icon fa-graduation-cap fa" style="color:#20C4D8;font-size:38px;margin-bottom:14px;"></div>
+          <h6 style="margin:0;color:#243746;line-height:1.4;">Formation du <strong style="color:#062D63;">N1</strong><br>au moniteur <strong style="color:#062D63;">MF2</strong></h6>
+        </div>
+      </div>
+
+      <div style="flex:1 1 140px;text-align:center;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:32px 18px;height:100%;box-shadow:0 10px 30px rgba(20,40,80,.06);">
+          <div class="novi-icon fa-ship fa" style="color:#20C4D8;font-size:38px;margin-bottom:14px;"></div>
+          <h6 style="margin:0;color:#243746;line-height:1.4;">Piscine · Fosse<br>Carrière · Mer</h6>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. PRÉSENTATION + MANTAS (section immersive) ============================ -->
+<!-- TODO-IMAGE : eau bleue / lumière sous-marine -->
+<section class="section novi-background bg-image context-dark" style="padding:64px 0;background:linear-gradient(rgba(6,45,99,.86),rgba(6,45,99,.9)), url('https://images.unsplash.com/photo-1518877593221-1f28583780b4?w=1600&amp;q=80&amp;auto=format&amp;fit=crop') center/cover;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="letter-spacing:-.01em;color:#fff;margin:0;">Un club dynamique &amp; convivial</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p class="big" style="color:rgba(255,255,255,.88);">
+          Affilié à la <abbr title="Fédération Française d'Études et de Sports Sous-Marins" style="color:#fff;">FFESSM</abbr> (n°02860158) et agréé Jeunesse et Sports,
+          le club est ouvert à toutes et à tous : formation technique, apnée, biologie et photo sous-marine —
+          en piscine, en carrière, en fosse et en mer.
+        </p>
+      </div>
+    </div>
+
+    <!-- Symbolique MANTAS -->
+    <div class="row justify-content-center offset-top-30">
+      <div class="col-lg-9 text-center">
+        <p style="color:#20C4D8;text-transform:uppercase;letter-spacing:.14em;font-size:12px;margin-bottom:14px;">Ce que veut dire notre nom</p>
+        <div style="font-size:46px;font-weight:700;letter-spacing:.2em;line-height:1;margin-bottom:18px;color:#fff;">
+          <span style="color:#20C4D8;">M</span>ANTAS
+        </div>
+        <p style="font-size:19px;color:rgba(255,255,255,.9);margin:0;">
+          <span style="color:#20C4D8;font-weight:700;">M</span>anifestations et
+          <span style="color:#20C4D8;font-weight:700;">A</span>ctivités
+          <span style="color:#20C4D8;font-weight:700;">N</span>autiques liées au
+          <span style="color:#20C4D8;font-weight:700;">T</span>ourisme
+          <span style="color:#20C4D8;font-weight:700;">A</span>quatique et
+          <span style="color:#20C4D8;font-weight:700;">S</span>ubaquatique
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center offset-top-30">
+      <div class="col-lg-8 text-center">
+        <div class="novi-icon fa-anchor fa" style="color:#20C4D8;font-size:30px;margin-bottom:10px;"></div>
+        <p style="font-size:24px;font-style:italic;color:#fff;margin-bottom:8px;">«&nbsp;Connaître pour mieux préserver&nbsp;»</p>
+        <p style="color:rgba(255,255,255,.8);margin:0;">Faire découvrir et développer la plongée sous-marine tout en protégeant les océans et les eaux douces.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 4. NOS ACTIVITÉS (cartes-photo) ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#eef6fb;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 style="letter-spacing:-.01em;margin:0;">Nos activités</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+      </div>
+    </div>
+
+    <div class="row justify-content-center offset-top-30">
+
+      <!-- Carte 1 -->
+      <div class="col-sm-6 col-lg-3" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <!-- TODO-IMAGE : plongée en carrière / eau douce (éditable via le module image VP Dive) -->
+          <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Plongée en carrière" style="display:block;width:100%;height:200px;object-fit:cover;" />
+          <div style="padding:26px 24px;text-align:left;">
+            <div class="novi-icon fa-life-ring fa" style="color:#20C4D8;font-size:26px;margin-bottom:8px;"></div>
+            <h5 style="margin:0 0 8px;">Carrières</h5>
+            <p style="color:#5a6a7a;margin:0;">Sorties à la demi-journée ou à la journée dans les carrières de Saint-Lin ou, exceptionnellement, Roussay, selon le calendrier du club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="col-sm-6 col-lg-3" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <!-- TODO-IMAGE : plongée en mer / Méditerranée (éditable via le module image VP Dive) -->
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Sorties en Méditerranée" style="display:block;width:100%;height:200px;object-fit:cover;" />
+          <div style="padding:26px 24px;text-align:left;">
+            <div class="novi-icon fa-ship fa" style="color:#20C4D8;font-size:26px;margin-bottom:8px;"></div>
+            <h5 style="margin:0 0 8px;">Sorties en Méditerranée</h5>
+            <p style="color:#5a6a7a;margin:0;">Une sortie club de 7 jours chaque printemps, plongées et pension complète : validez vos niveaux et explorez de nouveaux fonds.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="col-sm-6 col-lg-3" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <!-- TODO-IMAGE : entraînement piscine / fosse (éditable via le module image VP Dive) -->
+          <img src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Entraînements &amp; fosse" style="display:block;width:100%;height:200px;object-fit:cover;" />
+          <div style="padding:26px 24px;text-align:left;">
+            <div class="novi-icon fa-anchor fa" style="color:#20C4D8;font-size:26px;margin-bottom:8px;"></div>
+            <h5 style="margin:0 0 8px;">Entraînements &amp; fosse</h5>
+            <p style="color:#5a6a7a;margin:0;">Nage en piscine le mercredi soir et le dimanche matin, plongée le vendredi soir, et perfectionnement à la fosse de Civaux.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 4 : Apnée -->
+      <div class="col-sm-6 col-lg-3" style="margin-bottom:30px;">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.08);height:100%;">
+          <!-- TODO-IMAGE : apnéiste en descente (éditable via le module image VP Dive) -->
+          <img src="https://images.unsplash.com/photo-1566024287286-457247b70310?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Apnée" style="display:block;width:100%;height:200px;object-fit:cover;" />
+          <div style="padding:26px 24px;text-align:left;">
+            <div class="novi-icon fa-life-ring fa" style="color:#20C4D8;font-size:26px;margin-bottom:8px;"></div>
+            <h5 style="margin:0 0 8px;">Apnée</h5>
+            <p style="color:#5a6a7a;margin:0;">La discipline est enseignée et pratiquée au club : apprenez à évoluer en poids constant et à repousser vos limites en toute sécurité.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 5. PARCOURS DE FORMATION ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#ffffff;">
+  <div class="container">
+    <div class="col-lg-8 text-center" style="margin:0 auto;">
+      <h2 style="letter-spacing:-.01em;margin:0;">Votre parcours de plongée</h2>
+      <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 20px;">
+      <p style="color:#5a6a7a;margin:0;">Du premier baptême aux brevets d'encadrement, progressez à votre rythme selon le cursus FFESSM.</p>
+    </div>
+
+    <div class="row justify-content-center text-center" style="margin-top:32px;">
+      <div class="col-6 col-md-2"><div style="background:#fff;border:1px solid #eef1f5;border-radius:14px;padding:22px 8px;margin-bottom:16px;box-shadow:0 6px 18px rgba(20,40,80,.05);"><div style="font-size:26px;font-weight:700;color:#20C4D8;">N1</div><h6 style="margin:6px 0 0;color:#243746;font-size:13px;">Plongeur encadré</h6></div></div>
+      <div class="col-6 col-md-2"><div style="background:#fff;border:1px solid #eef1f5;border-radius:14px;padding:22px 8px;margin-bottom:16px;box-shadow:0 6px 18px rgba(20,40,80,.05);"><div style="font-size:26px;font-weight:700;color:#20C4D8;">N2</div><h6 style="margin:6px 0 0;color:#243746;font-size:13px;">Autonomie 20 m</h6></div></div>
+      <div class="col-6 col-md-2"><div style="background:#fff;border:1px solid #eef1f5;border-radius:14px;padding:22px 8px;margin-bottom:16px;box-shadow:0 6px 18px rgba(20,40,80,.05);"><div style="font-size:26px;font-weight:700;color:#20C4D8;">N3</div><h6 style="margin:6px 0 0;color:#243746;font-size:13px;">Autonomie 60 m</h6></div></div>
+      <div class="col-6 col-md-2"><div style="background:#fff;border:1px solid #eef1f5;border-radius:14px;padding:22px 8px;margin-bottom:16px;box-shadow:0 6px 18px rgba(20,40,80,.05);"><div style="font-size:26px;font-weight:700;color:#20C4D8;">N4</div><h6 style="margin:6px 0 0;color:#243746;font-size:13px;">Guide de palanquée</h6></div></div>
+      <div class="col-6 col-md-2"><div style="background:#fff;border:1px solid #eef1f5;border-radius:14px;padding:22px 8px;margin-bottom:16px;box-shadow:0 6px 18px rgba(20,40,80,.05);"><div style="font-size:26px;font-weight:700;color:#20C4D8;">MF1</div><h6 style="margin:6px 0 0;color:#243746;font-size:13px;">Moniteur fédéral</h6></div></div>
+      <div class="col-6 col-md-2"><div style="background:#fff;border:1px solid #eef1f5;border-radius:14px;padding:22px 8px;margin-bottom:16px;box-shadow:0 6px 18px rgba(20,40,80,.05);"><div style="font-size:26px;font-weight:700;color:#20C4D8;">MF2</div><h6 style="margin:6px 0 0;color:#243746;font-size:13px;">Moniteur 2<sup>e</sup> degré</h6></div></div>
+    </div>
+
+    <div class="row justify-content-center offset-top-30">
+      <div class="col-sm-12 text-center">
+        <a class="btn btn-lg btn-effect-ujarak" href="/w/formation" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Découvrir les formations</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div aria-hidden="true" style="line-height:0;margin-top:-1px;background:transparent;"><svg viewBox="0 0 1440 90" preserveAspectRatio="none" width="100%" height="70"><path d="M0,40 C240,90 480,0 720,35 C960,70 1200,20 1440,50 L1440,90 L0,90 Z" fill="#062D63"></path></svg></div>
+<!-- ============================ 6. BAPTÊME (section image immersive) ============================ -->
+<!-- TODO-IMAGE : belle photo sous-marine pour le fond -->
+<section class="section novi-background bg-image" style="padding:80px 0;background:linear-gradient(rgba(6,45,99,.72),rgba(14,102,169,.68)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&amp;q=80&amp;auto=format&amp;fit=crop') center/cover no-repeat;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center context-dark">
+        <div class="novi-icon fa-life-ring fa" style="font-size:48px;color:#20C4D8;margin-bottom:10px;"></div>
+        <h2 style="color:#fff;letter-spacing:-.01em;margin:0 0 12px;">Jamais plongé ? Venez essayer&nbsp;!</h2>
+        <p class="big" style="color:rgba(255,255,255,.9);">Le baptême de plongée, c'est la façon la plus simple de découvrir le monde du silence, encadré par nos moniteurs, en toute sécurité. Sans prérequis, dès 8 ans.</p>
+        <a class="btn btn-lg btn-effect-ujarak" href="/w/bapteme" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin-top:18px;"><span>Réserver mon baptême</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 7. INFOS PRATIQUES (cartes) ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#eef6fb;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 style="letter-spacing:-.01em;margin:0;">Infos pratiques</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+      </div>
+    </div>
+
+    <div class="row justify-content-center offset-top-30">
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border-radius:16px;padding:34px 26px;height:100%;box-shadow:0 10px 30px rgba(20,40,80,.06);">
+          <div class="novi-icon fa-calendar fa" style="color:#20C4D8;font-size:32px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;">Entraînements</h5>
+          <p style="color:#5a6a7a;margin:0;"><strong>Nage</strong> : mercredi soir &amp; dimanche matin<br><strong>Nage &amp; plongée</strong> : vendredi soir</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border-radius:16px;padding:34px 26px;height:100%;box-shadow:0 10px 30px rgba(20,40,80,.06);">
+          <div class="novi-icon fa-map-marker fa" style="color:#20C4D8;font-size:32px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;">Où nous trouver</h5>
+          <p style="color:#5a6a7a;margin:0;">57 rue de la Ganterie<br>86000 Poitiers</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border-radius:16px;padding:34px 26px;height:100%;box-shadow:0 10px 30px rgba(20,40,80,.06);">
+          <div class="novi-icon fa-phone fa" style="color:#20C4D8;font-size:32px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;">Nous contacter</h5>
+          <p style="color:#5a6a7a;margin:0;"><a href="callto:#0763907306" style="color:#4a5a6a;">07 63 90 73 06</a><br><a href="mailto:jp.mar1@wanadoo.fr" style="color:#4a5a6a;">jp.mar1@wanadoo.fr</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 8. PROCHAINES ACTIVITÉS — RENDU CUSTOM (carousel, données live VP Dive) ============================ -->
+<section class="section novi-background" style="padding:56px 0 8px;background:#F7FBFD;">
+  <div class="container"><div class="row justify-content-center"><div class="col-sm-12">
+    <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Prochaines activités</h2>
+    <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+    <p style="color:#8a97ab;font-size:13px;margin:14px 0 0;">Faites glisser pour voir toutes les sorties →</p>
+  </div></div></div>
+</section>
+<section class="section novi-background" style="padding:8px 0 56px;background:#F7FBFD;">
+  <!-- Owl gère le slider + flèches + responsive (1/2/3 items), NOTRE style dans chaque .item.
+       Le plugin s'auto-initialise sur .owl-carousel (voir assets/js/script.js). -->
+  <style>
+    /* Flèches : on GARDE le style natif Owl du thème (non personnalisable côté VP Dive). */
+    /* Hauteurs de cartes égalisées : le stage devient flex, chaque item s'étire */
+    .mantas-events .owl-carousel .owl-stage { display:flex; }
+    .mantas-events .owl-carousel .owl-item { display:flex; }
+    .mantas-events .owl-item > a, .mantas-events .item { width:100%; }
+    .mantas-events .mantas-card { display:flex; background:#fff; border:1px solid #e3ecf3; border-radius:16px; box-shadow:0 10px 30px rgba(6,45,99,.08); overflow:hidden; height:100%; text-align:left; transition:box-shadow .2s,transform .2s; }
+    /* Contenu centré verticalement dans la carte */
+    .mantas-events .mantas-card-body { padding:18px 20px; flex:1; display:flex; flex-direction:column; justify-content:center; }
+    .mantas-events a:hover .mantas-card { box-shadow:0 16px 40px rgba(6,45,99,.16); transform:translateY(-3px); }
+  </style>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 mantas-events">
+        <div class="owl-carousel calendar-carousel" data-items="1" data-sm-items="2" data-md-items="3" data-nav="true" data-dots="false" data-loop="false" data-margin="24" data-mouse-drag="true">
+
+          <!-- 1 — St Lin, 26 juil -->
+          <div class="item">
+            <a href="https://mantas86.vpdive.com/f/calendar/zdzwxKjVxcf_pS_t2kKnz5pecRW2GbRNeKKrECkwIKE/index" target="_blank" style="text-decoration:none;display:block;height:100%;">
+              <div class="mantas-card">
+                <div style="flex:0 0 88px;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;">
+                  <span style="font-size:30px;font-weight:700;line-height:1;">26</span>
+                  <span style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;">Juil.</span>
+                  <span style="font-size:12px;opacity:.85;margin-top:2px;">2026</span>
+                </div>
+                <div class="mantas-card-body">
+                  <h5 style="margin:0 0 14px;font-size:17px;color:#062D63;">St Lin</h5>
+                  <p style="margin:0 0 4px;color:#20C4D8;font-size:13px;font-weight:600;"><span class="fa fa-clock-o"></span> 08:30 – 13:00</p>
+                  <p style="margin:0;color:#8a97ab;font-size:13px;"><span class="fa fa-map-marker"></span> St Lin</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 2 — Plongée Technique / Scaphandre, 29 juil -->
+          <div class="item">
+            <a href="https://mantas86.vpdive.com/f/calendar/Q_h2KcmFeiWF6l_Z8jvx8_KKvDN0qPIWZpyd4ZCrAYw/index" target="_blank" style="text-decoration:none;display:block;height:100%;">
+              <div class="mantas-card">
+                <div style="flex:0 0 88px;background:linear-gradient(160deg,#20C4D8,#0E66A9);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;">
+                  <span style="font-size:30px;font-weight:700;line-height:1;">29</span>
+                  <span style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;">Juil.</span>
+                  <span style="font-size:12px;opacity:.85;margin-top:2px;">2026</span>
+                </div>
+                <div class="mantas-card-body">
+                  <h5 style="margin:0 0 14px;font-size:17px;color:#062D63;">Plongée Technique / Scaphandre</h5>
+                  <p style="margin:0 0 4px;color:#20C4D8;font-size:13px;font-weight:600;"><span class="fa fa-clock-o"></span> 10:00 – 17:00</p>
+                  <p style="margin:0 0 22px;color:#8a97ab;font-size:13px;"><span class="fa fa-map-marker"></span> Saint lin</p>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <img src="https://mantas86.vpdive.com/uploads/cache/profile_picture_40/uploads/profile_picture/6150c197197d0.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                    <div>
+                      <p style="margin:0 0 2px;font-size:0.9em;font-weight:400;color:#8a97ab;">Responsable</p>
+                      <span style="color:#4a5a6a;font-size:14px;">Pascal LE ROUGE</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 3 — Baptêmes Nieul l'Espoir, 01 août -->
+          <div class="item">
+            <a href="https://mantas86.vpdive.com/f/calendar/4r7AmuYphe_CxkdmkNiaiz-JFWc0mkyfSyHcjlhdLNo/index" target="_blank" style="text-decoration:none;display:block;height:100%;">
+              <div class="mantas-card">
+                <div style="flex:0 0 88px;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;">
+                  <span style="font-size:30px;font-weight:700;line-height:1;">01</span>
+                  <span style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;">Août</span>
+                  <span style="font-size:12px;opacity:.85;margin-top:2px;">2026</span>
+                </div>
+                <div class="mantas-card-body">
+                  <h5 style="margin:0 0 14px;font-size:17px;color:#062D63;">séances de baptêmes à la piscine de Nieul l'espoir</h5>
+                  <p style="margin:0 0 4px;color:#20C4D8;font-size:13px;font-weight:600;"><span class="fa fa-clock-o"></span> 15:30 – 19:00</p>
+                  <p style="margin:0 0 22px;color:#8a97ab;font-size:13px;"><span class="fa fa-map-marker"></span> Nieuil-l'Espoir, France</p>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <img src="https://mantas86.vpdive.com/uploads/cache/profile_picture_40/uploads/profile_picture/609e411f795da.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                    <div>
+                      <p style="margin:0 0 2px;font-size:0.9em;font-weight:400;color:#8a97ab;">Responsable</p>
+                      <span style="color:#4a5a6a;font-size:14px;">Yann PLATON</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 4 — St Lin, 08 août -->
+          <div class="item">
+            <a href="https://mantas86.vpdive.com/f/calendar/6Ul1JYuL4vbQwVWSM3vdELXCAtCxo-JxwAGqRPk0lr8/index" target="_blank" style="text-decoration:none;display:block;height:100%;">
+              <div class="mantas-card">
+                <div style="flex:0 0 88px;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;">
+                  <span style="font-size:30px;font-weight:700;line-height:1;">08</span>
+                  <span style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;">Août</span>
+                  <span style="font-size:12px;opacity:.85;margin-top:2px;">2026</span>
+                </div>
+                <div class="mantas-card-body">
+                  <h5 style="margin:0 0 14px;font-size:17px;color:#062D63;">St Lin</h5>
+                  <p style="margin:0 0 4px;color:#20C4D8;font-size:13px;font-weight:600;"><span class="fa fa-clock-o"></span> 08:30 – 13:00</p>
+                  <p style="margin:0;color:#8a97ab;font-size:13px;"><span class="fa fa-map-marker"></span> St Lin</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 5 — St Lin, 12 août -->
+          <div class="item">
+            <a href="https://mantas86.vpdive.com/f/calendar/i2rntukVDYseZ95Ah2ioOeZzpz9c-owQT4qYG2u-UaA/index" target="_blank" style="text-decoration:none;display:block;height:100%;">
+              <div class="mantas-card">
+                <div style="flex:0 0 88px;background:linear-gradient(160deg,#20C4D8,#0E66A9);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;">
+                  <span style="font-size:30px;font-weight:700;line-height:1;">12</span>
+                  <span style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;">Août</span>
+                  <span style="font-size:12px;opacity:.85;margin-top:2px;">2026</span>
+                </div>
+                <div class="mantas-card-body">
+                  <h5 style="margin:0 0 14px;font-size:17px;color:#062D63;">St Lin</h5>
+                  <p style="margin:0 0 4px;color:#20C4D8;font-size:13px;font-weight:600;"><span class="fa fa-clock-o"></span> 08:30 – 13:00</p>
+                  <p style="margin:0;color:#8a97ab;font-size:13px;"><span class="fa fa-map-marker"></span> St Lin</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 6 — St Lin, 23 août -->
+          <div class="item">
+            <a href="https://mantas86.vpdive.com/f/calendar/pzAdPeinZ7Kz2LFkBTuijhM2hutGetJAARnqWsTOv1g/index" target="_blank" style="text-decoration:none;display:block;height:100%;">
+              <div class="mantas-card">
+                <div style="flex:0 0 88px;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;">
+                  <span style="font-size:30px;font-weight:700;line-height:1;">23</span>
+                  <span style="text-transform:uppercase;font-size:12px;letter-spacing:.08em;">Août</span>
+                  <span style="font-size:12px;opacity:.85;margin-top:2px;">2026</span>
+                </div>
+                <div class="mantas-card-body">
+                  <h5 style="margin:0 0 14px;font-size:17px;color:#062D63;">St Lin</h5>
+                  <p style="margin:0 0 4px;color:#20C4D8;font-size:13px;font-weight:600;"><span class="fa fa-clock-o"></span> 08:30 – 13:00</p>
+                  <p style="margin:0;color:#8a97ab;font-size:13px;"><span class="fa fa-map-marker"></span> St Lin</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 7bis. SUIVEZ-NOUS (réseaux sociaux) ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#ffffff;">
+  <div class="container">
+    <div class="col-lg-8 text-center" style="margin:0 auto;">
+      <h2 style="letter-spacing:-.01em;margin:0;">Suivez-nous</h2>
+      <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 20px;">
+      <p style="color:#5a6a7a;margin:0;">Retrouvez nos sorties, photos et actualités au quotidien sur nos réseaux.</p>
+    </div>
+
+    <div class="row justify-content-center" style="margin-top:32px;">
+      <div class="col-6 col-md-4" style="margin-bottom:20px;">
+        <a href="https://www.facebook.com/profile.php?id=61551041642656" target="_blank" style="display:block;text-decoration:none;">
+          <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:32px 18px;box-shadow:0 10px 30px rgba(20,40,80,.06);transition:transform .2s;">
+            <div class="novi-icon fa-facebook fa" style="font-size:42px;color:#1877f2;margin-bottom:10px;"></div>
+            <h6 style="margin:0;color:#243746;">Facebook</h6>
+            <p style="margin:4px 0 0;color:#8a97ab;font-size:13px;">Club Mantas Plongée</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4" style="margin-bottom:20px;">
+        <a href="https://www.instagram.com/club_mantas_plongee/" target="_blank" style="display:block;text-decoration:none;">
+          <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:32px 18px;box-shadow:0 10px 30px rgba(20,40,80,.06);transition:transform .2s;">
+            <div class="novi-icon fa-instagram fa" style="font-size:42px;color:#e1306c;margin-bottom:10px;"></div>
+            <h6 style="margin:0;color:#243746;">Instagram</h6>
+            <p style="margin:4px 0 0;color:#8a97ab;font-size:13px;">@club_mantas_plongee</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 9. NOUS TROUVER / CARTE (dynamique — conservé) ============================ -->
+<section class="section novi-background" style="padding:56px 0 24px;background:#F7FBFD;">
+  <div class="container"><div class="row justify-content-center"><div class="col-sm-12">
+    <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Nous trouver</h2>
+    <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+  </div></div></div>
+</section>
+<section class="section box-wrap">
+  <div class="box-wrap-map">
+    <div class="google-map-container"
+         data-key="VOTRE_CLE_GOOGLE_MAPS"
+         data-center="Rue de la Ganterie, Poitiers, France"
+         data-icon="/files/images/gmap_marker.png?15012021"
+         data-icon-active="/files/images/gmap_marker_active.png?15012021"
+         data-zoom="13">
+      <div class="google-map"></div>
+      <ul class="google-map-markers">
+        <li data-location="57 Rue de la Ganterie, Poitiers, France" data-description="Piscine"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="box-wrap-content"><div class="container"><div class="box-wrap-content-interactive">
+    <div class="box-contacts">
+      <h4>Adresse</h4>
+      <address><p>57 rue de la Ganterie<br>86000 Poitiers</p></address>
+      <h4>Téléphone</h4>
+      <ul class="list-0"><li><a href="callto:#0763907306" target="_parent">07 63 90 73 06</a></li></ul>
+      <h4>E-mail</h4>
+      <a class="link-gray" href="mailto:jp.mar1@wanadoo.fr" target="_blank">jp.mar1@wanadoo.fr</a>
+    </div>
+  </div></div></div>
+</section>
+
+                                                  <section class="page-footer-default text-center novi-background bg-image">
+    <div class="container">
+      <div class="row spacing-30">
+        <div class="col-lg-7 text-xl-left">
+          <ul class="list-nav">
+            
+          <li>
+      <a href="/w/mentions-legales" ><span>Mentions légales</span></a>
+    </li>
+            <li>
+      <a href="https://www.instagram.com/club_mantas_plongee/" target="_blank"><span>Instagram</span></a>
+    </li>
+            <li>
+      <a href="https://www.facebook.com/profile.php?id=61551041642656" target="_blank"><span>Facebook</span></a>
+    </li>
+  
+                          <li><a onclick="$.gdprcookie.display()" class="cursor-pointer">Cookies</a></li>
+                      </ul>
+        </div>
+        <div class="col-lg-5 text-xl-right">
+          <p class="rights">propulsé par <a href="https://vpdive.com" target="_blank" style="color: #888">VPDive</a> / <a href="https://vp-sports.com" target="_blank" style="color: #888">VPSports</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

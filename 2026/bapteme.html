@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Baptême — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "BAPTÊME" (refonte "épuré / moderne")
+     À coller dans le bloc de contenu de la page "Baptême" du builder VP Dive.
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - Le FORMULAIRE VP Dive (rd-mailform) est conservé INTACT : action, champs `name`,
+       `data-constraints`, honeypot + `form_ts` + script anti-spam, et le widget captcha
+       <cap-widget>. On ne restyle QUE l'habillage (carte, titres) et le bouton (inline).
+       Ne pas modifier la mécanique => sinon l'envoi/anti-spam/validation cassent.
+     - Images live en chemins ABSOLUS pour le rendu local => remettre en RELATIF côté VP Dive.
+     - Banniere hero : image Unsplash placeholder (TODO-IMAGE).
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE (page secondaire : plus court) ============================ -->
+<!-- TODO-IMAGE : baptême / découverte plongée (éditable via le module image VP Dive) -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <!-- Wrapper flex maison : centrage H+V fiable (la .row du thème est en display:block ici,
+       donc justify/align-items n'ont pas d'effet). min-height identique sur toutes les pages. -->
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+    <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+    <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Votre <span style="color:#20C4D8;">baptême</span></h1>
+    <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Découvrez la plongée, gratuitement, dès 8 ans</p>
+  </div>
+</section>
+
+<!-- ============================ 2. PRÉSENTATION (texte + image) ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">La plongée vous intéresse ?</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+      </div>
+    </div>
+
+    <div class="row justify-content-center" style="margin-top:32px;">
+      <div class="col-sm-12 col-lg-6 text-left" style="margin-bottom:24px;">
+        <p style="color:#5a6a7a;margin:0;line-height:1.9;">
+          Vous aimeriez essayer de mettre la tête sous l'eau ?<br><br>
+          Venez tenter l'expérience lors d'un baptême, un <strong style="color:#062D63;">vendredi soir à partir de 20 h</strong> à la piscine de la Ganterie.<br><br>
+          C'est <strong style="color:#062D63;">gratuit</strong>, ouvert à toutes et à tous <strong style="color:#062D63;">dès 8 ans</strong>*.<br><br>
+          Le club fournit tout le matériel, sauf le maillot de bain.<br><br>
+          Vous serez encadré par des moniteurs compétents, aguerris, disponibles et bienveillants.<br><br>
+          <span style="color:#8a97ab;font-size:13px;">* Présence des parents obligatoire pour les mineurs.</span>
+        </p>
+      </div>
+      <div class="col-sm-12 col-lg-6" style="margin-bottom:24px;">
+        <img src="https://mantas86.vpdive.com/uploads/menus/268/AwNHBR3kmE4WlvFuSTjJMVpDLZrO1axz7fesYP9c2UK/media/initiateur800x500.jpg" alt="Baptême de plongée à la piscine de la Ganterie" style="display:block;width:100%;height:100%;min-height:340px;object-fit:cover;border-radius:16px;box-shadow:0 14px 40px rgba(20,40,80,.10);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. FORMULAIRE DE DEMANDE (rd-mailform VP Dive — mécanique conservée) ============================ -->
+<section id="demande-bapteme" class="section novi-background" style="padding:64px 0;background:#eef6fb;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center" style="margin-bottom:8px;">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Demandez votre baptême</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 14px;">
+        <p style="color:#5a6a7a;margin:0;">On vous recontacte rapidement.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-8">
+        <!-- Carte blanche autour du formulaire (habillage charte). Le <form> reste intact. -->
+        <div style="background:#fff;border:1px solid #e3ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);padding:36px 34px;text-align:left;">
+          <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="/f/contactForm">
+            <!-- Honeypot anti-spam (conservé tel quel) -->
+            <div class="hp-wrap" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+              <label for="internal_note_5521" aria-hidden="true" tabindex="-1">Votre site web</label>
+              <input type="text" id="internal_note_5521" name="internal_note_5521" tabindex="-1" autocomplete="off" aria-hidden="true" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-protonpass-ignore="true" data-keeper-ignore="true" data-form-type="other">
+            </div>
+            <input type="hidden" name="form_ts" value="">
+            <script>
+              (function() {
+                try {
+                  var f = (document.currentScript && document.currentScript.closest ? document.currentScript.closest("form") : null) || document.querySelector("form");
+                  if (!f) return;
+                  var ts = f.querySelector("input[name=\"form_ts\"]");
+                  if (ts && !ts.value) { ts.value = Date.now() }
+                  f.addEventListener("submit", function() {
+                    var ts2 = f.querySelector("input[name=\"form_ts\"]");
+                    if (ts2 && !ts2.value) { ts2.value = Date.now() }
+                  }, { capture: true });
+                  var hp = f.querySelector("#hp_email");
+                  if (hp && hp.parentElement) {
+                    hp.parentElement.style.position = "absolute";
+                    hp.parentElement.style.left = "-10000px";
+                    hp.setAttribute("aria-hidden", "true");
+                    hp.setAttribute("tabindex", "-1");
+                    hp.autocomplete = "off"
+                  }
+                } catch (e) {}
+              })();
+            </script>
+            <div class="row row-sm-bottom spacing-20">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" id="contact-first-name" type="text" name="name" data-constraints="@Required">
+                  <label class="form-label" for="contact-first-name">Votre nom</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" id="contact-phone" type="text" name="phone" data-constraints="@Numeric">
+                  <label class="form-label" for="contact-phone">Téléphone</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <textarea class="form-control" id="contact-message" name="message" data-constraints="@Required">Bonjour, Je souhaiterais réaliser un baptême de plongée et découvrir votre club. Merci de me recontacter pour connaître les créneaux disponibles et les modalités. Dans l'attente de votre retour.</textarea>
+                  <label class="form-label" for="contact-message">Votre message</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
+                  <label class="form-label" for="contact-email">E-mail</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <button class="btn btn-primary btn-block btn-effect-ujarak" type="submit" style="background:#20C4D8;border-color:#20C4D8;color:#062D63;font-weight:700;">Envoyer ma demande</button>
+              </div>
+            </div>
+            <div class="form-wrap">
+              <div class="recaptcha">
+                <cap-widget data-cap-api-endpoint="/f/captcha/9LoII965243t/" data-cap-i18n-initial-state="Je ne suis pas un robot" data-cap-i18n-verifying-label="Vérification en cours…" data-cap-i18n-solved-label="Vérifié" data-cap-i18n-error-label="Erreur, réessayez" data-cap-i18n-verify-aria-label="Vérifier que vous êtes humain" data-cap-i18n-verifying-aria-label="Vérification en cours, veuillez patienter" data-cap-i18n-verified-aria-label="Vérification réussie, vous pouvez continuer" data-cap-i18n-error-aria-label="Une erreur s'est produite, réessayez"></cap-widget>
+              </div>
+            </div>
+            <div class="privacy-notice" style="font-size:11px;color:#8a97ab;margin-top:14px;">
+              <u>Vos données personnelles</u> : les informations saisies dans ce formulaire sont utilisées uniquement pour traiter et répondre à votre demande. Elles ne sont pas utilisées à d'autres fins. Pour en savoir plus sur la gestion de vos données et vos droits, consultez notre <a href="https://vpdive.com/w/politique-de-confidentialite-1" target="_blank" style="color:#0E66A9;">Politique de confidentialité</a>.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

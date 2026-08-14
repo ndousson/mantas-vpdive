@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Démo — Composant « Formulaire » VP Dive (stylisé)</title>
+<style>
+  :root{
+    --bleu:#062D63; --cyan:#20C4D8; --bleu-med:#0E66A9;
+    --gris:#5a6a7a; --gris-clair:#8a97ab; --fond:#eef6fb; --bord:#e3ecf3;
+    --ombre:0 10px 30px rgba(6,45,99,.08);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Roboto","Segoe UI",system-ui,sans-serif;color:#243746;background:var(--fond);}
+  header{background:linear-gradient(120deg,var(--bleu-med),var(--bleu));color:#fff;padding:34px 24px;text-align:center;}
+  header h1{margin:0 0 6px;font-family:"Montserrat",sans-serif;font-weight:700;font-size:22px;}
+  header h1 span{color:var(--cyan);}
+  header p{margin:0;color:rgba(255,255,255,.85);font-size:13px;max-width:660px;margin:8px auto 0;line-height:1.6;}
+  header code{background:rgba(255,255,255,.14);padding:1px 6px;border-radius:5px;}
+  main{max-width:760px;margin:0 auto;padding:36px 18px 64px;}
+  .section-title{text-align:center;margin:0 0 26px;}
+  .section-title h2{color:var(--bleu);font-family:"Montserrat";margin:0;font-size:22px;}
+  .section-title hr{width:60px;height:3px;border:0;background:var(--cyan);margin:16px auto 0;border-radius:2px;}
+
+  /* --- Carte formulaire --- */
+  .form-card{background:#fff;border:1px solid var(--bord);border-radius:18px;box-shadow:var(--ombre);padding:34px 34px 30px;}
+  .grid{display:flex;flex-wrap:wrap;gap:18px 20px;}
+  .fg{position:relative;flex:1 1 100%;}
+  .fg.half{flex:1 1 calc(50% - 10px);}
+  .fg input, .fg textarea{
+    width:100%;border:1.5px solid #d9e3ec;border-radius:11px;background:#fbfdff;
+    padding:20px 14px 8px;font-size:15px;font-family:inherit;color:#243746;outline:none;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  .fg textarea{min-height:130px;resize:vertical;padding-top:24px;}
+  .fg input:focus, .fg textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(32,196,216,.14);}
+  /* label flottant (rd-input-label) */
+  .fg label{
+    position:absolute;left:15px;top:14px;color:var(--gris-clair);font-size:15px;
+    pointer-events:none;transition:all .15s ease;background:transparent;
+  }
+  .fg input:focus + label, .fg input:not(:placeholder-shown) + label,
+  .fg textarea:focus + label, .fg textarea:not(:placeholder-shown) + label{
+    top:6px;font-size:11px;color:var(--bleu-med);font-weight:600;letter-spacing:.02em;
+  }
+  .req{color:var(--cyan);}
+  /* honeypot : masqué à l'écran comme sur le site (anti-spam) */
+  .honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  /* zone captcha (cap-widget) */
+  .captcha-zone{
+    margin-top:22px;display:flex;align-items:center;gap:12px;padding:14px 16px;
+    background:#f3f9fd;border:1px dashed #bcd6e8;border-radius:12px;color:var(--gris);font-size:13px;
+  }
+  .captcha-zone .box{width:26px;height:26px;border:2px solid var(--bleu-med);border-radius:6px;flex:none;}
+  .submit-btn{
+    display:inline-flex;align-items:center;gap:9px;margin-top:24px;border:0;cursor:pointer;
+    background:var(--cyan);color:#fff;font-family:"Montserrat",sans-serif;font-weight:700;font-size:14px;
+    padding:14px 30px;border-radius:999px;box-shadow:0 8px 22px rgba(32,196,216,.35);transition:background .15s, transform .05s;
+  }
+  .submit-btn:hover{background:#12b2c6;}
+  .submit-btn:active{transform:translateY(1px);}
+
+  .note{margin-top:30px;font-size:12.5px;color:var(--gris);line-height:1.7;background:#fff;border:1px solid var(--bord);border-radius:12px;padding:16px 20px;}
+  .note b{color:var(--bleu);}
+  .fa{font-family:"FontAwesome";}
+  @media (max-width:560px){ .fg.half{flex:1 1 100%;} .form-card{padding:26px 20px;} }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+  <h1>Composant « <span>Formulaire</span> » VP Dive — proposition stylisée</h1>
+  <p>Reproduction fidèle du composant natif <code>rd-mailform</code> (formulaire de contact / demande de baptême) : mêmes champs, <b>labels flottants</b>, <b>honeypot</b> anti-spam et <b>captcha</b> — habillé à la charte MANTAS 86. Le mécanisme d'envoi reste géré par VP Dive.</p>
+</header>
+<main>
+  <div class="section-title">
+    <h2>Nous contacter</h2>
+    <hr>
+  </div>
+
+  <div class="form-card">
+    <!-- Reprend la structure du rd-mailform : action /f/contactForm, champs name/last-name/email/phone/message -->
+    <form onsubmit="return false;" novalidate>
+      <div class="grid">
+
+        <div class="fg half">
+          <input id="f-name" type="text" placeholder=" " />
+          <label for="f-name">Votre nom <span class="req">*</span></label>
+        </div>
+
+        <div class="fg half">
+          <input id="f-firstname" type="text" placeholder=" " />
+          <label for="f-firstname">Votre prénom <span class="req">*</span></label>
+        </div>
+
+        <div class="fg half">
+          <input id="f-email" type="email" placeholder=" " />
+          <label for="f-email">E-mail <span class="req">*</span></label>
+        </div>
+
+        <div class="fg half">
+          <input id="f-phone" type="text" placeholder=" " />
+          <label for="f-phone">Téléphone</label>
+        </div>
+
+        <div class="fg">
+          <textarea id="f-message" placeholder=" "></textarea>
+          <label for="f-message">Votre message <span class="req">*</span></label>
+        </div>
+
+      </div>
+
+      <!-- honeypot anti-spam : présent mais masqué (comme "Votre site web" sur le site) -->
+      <div class="honeypot" aria-hidden="true">
+        <label for="f-website">Votre site web</label>
+        <input id="f-website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <!-- zone captcha : côté VP Dive, widget <cap-widget> -->
+      <div class="captcha-zone">
+        <span class="box"></span>
+        <span><b style="color:var(--bleu);">Vérification anti-robot</b> — le widget <code>cap-widget</code> s'affiche ici (géré par VP Dive).</span>
+      </div>
+
+      <button type="submit" class="submit-btn"><span class="fa fa-paper-plane"></span> Envoyer le message</button>
+    </form>
+  </div>
+
+  <div class="note">
+    <b>Note pour l'équipe VP Dive.</b> Cette page est une <b>maquette de style</b> pour le composant
+    <code>rd-mailform</code>. Elle conserve la structure fonctionnelle&nbsp;: <b>action</b> <code>/f/contactForm</code>,
+    champs <code>name</code> / <code>last-name</code> / <code>email</code> (@Email) / <code>phone</code> (@Numeric) /
+    <code>message</code>, <b>honeypot</b> masqué (<code>internal_note_*</code>), <b>form_ts</b> et le widget
+    <b>captcha</b> <code>cap-widget</code>. Seul l'habillage est proposé&nbsp;: carte blanche arrondie,
+    labels flottants, focus cyan, zone captcha et bouton d'envoi à la charte. La <b>validation</b>, l'<b>envoi</b>
+    et le <b>captcha</b> restent initialisés par le JS de la plateforme.
+  </div>
+</main>
+<!-- NAV LOCALE (dev only) — retour index ; ne s'affiche qu'en localhost -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+
+</body></html>

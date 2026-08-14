@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qui sommes-nous — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "QUI SOMMES-NOUS" (refonte "épuré / moderne")
+     À coller dans le bloc de contenu de la page "Qui sommes-nous" du builder VP Dive.
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - Composants dynamiques/natifs VP Dive conservés INTACTS : carousel Owl (À Propos) et
+       le bloc trombinoscope "team-members" (Les Membres du Bureau) — ne pas modifier leur
+       structure (JS d'init + rendu serveur des membres).
+     - Images/liens live en chemins ABSOLUS pour le rendu local => remettre les chemins
+       RELATIFS côté VP Dive.
+     - Banniere hero : image Unsplash placeholder (TODO-IMAGE).
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE (page secondaire : plus court) ============================ -->
+<!-- TODO-IMAGE : équipe de plongeurs / groupe (éditable via le module image VP Dive) -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1566024287286-457247b70310?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Qui sommes-<span style="color:#20C4D8;">nous ?</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Les Mantassiens</p>
+  </div>
+</section>
+
+<!-- ============================ 2. À PROPOS (texte + carousel Owl natif) ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">À propos</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 22px;">
+        <p style="color:#5a6a7a;margin:0;line-height:1.9;text-align:left;">
+          Un club de plongée formateur qui allie sérieux et convivialité. Une équipe d'encadrants nombreux, dynamiques et motivés vous feront découvrir et partager leur passion pour la plongée.<br><br>
+          Nous attachons beaucoup d'importance à ce que les adhérents se sentent bien intégrés, bien formés et heureux d'être au Mantas.<br><br>
+          Entraînements plongée, apnée et nage chaque vendredi soir, nage les mercredis soir et dimanches matin à la piscine de La Ganterie de Poitiers, sans oublier nos sorties à la fosse de Civaux.
+        </p>
+      </div>
+    </div>
+
+    <!-- GALERIE (composant natif VP Dive "gallery-justify") : isotope (masonry) + lightGallery (zoom au clic).
+         Mise en page MOSAÏQUE (photos paysage bien cadrées via object-fit:cover, pas de barres verticales)
+         + ZOOM au clic via lightGallery : conteneur data-lightgallery="group", chaque photo dans un
+         <a data-lightgallery="item" href="GRAND_FORMAT">. lightGallery ne dépend PAS d'isotope.
+         Le href = image ouverte au zoom, le <img> = vignette (ici même URL live, VP Dive gère les tailles).
+         Ajouter une photo : nouveau <a class="ip-photo" ...> dans la grille (ajuster grid si besoin). -->
+    <div class="row justify-content-center" style="margin-top:36px;">
+      <div class="col-lg-10">
+        <!-- Galerie flex-wrap : mosaïque sur desktop (grande + colonne de 2), s'empile en mobile.
+             Pas de média-query (contrainte inline) : flex:1 1 Xpx + flex-wrap gèrent le passage à 1 colonne. -->
+        <div data-lightgallery="group" style="display:flex;flex-wrap:wrap;gap:16px;">
+          <a class="ip-photo" href="https://mantas86.vpdive.com/l/builder/app/projects/268/uvFKVhHs5CooPrLxOBmJOfux3ZrJPRyb/media/media/img20250614wa0047.jpg-1600x1200.jpeg" data-lightgallery="item" style="flex:2 1 320px;display:block;border-radius:16px;overflow:hidden;">
+            <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/uvFKVhHs5CooPrLxOBmJOfux3ZrJPRyb/media/media/img20250614wa0047.jpg-1600x1200.jpeg" alt="Plongée en groupe" style="width:100%;height:100%;min-height:260px;object-fit:cover;display:block;">
+          </a>
+          <div style="flex:1 1 240px;display:flex;flex-direction:column;gap:16px;">
+            <a class="ip-photo" href="https://mantas86.vpdive.com/uploads/menus/268/uvFKVhHs5CooPrLxOBmJOfux3ZrJPRyb/media/calajoncols.jpg" data-lightgallery="item" style="flex:1;display:block;border-radius:16px;overflow:hidden;">
+              <img src="https://mantas86.vpdive.com/uploads/menus/268/uvFKVhHs5CooPrLxOBmJOfux3ZrJPRyb/media/calajoncols.jpg" alt="Sortie du club" style="width:100%;height:100%;min-height:122px;object-fit:cover;display:block;">
+            </a>
+            <a class="ip-photo" href="https://mantas86.vpdive.com/uploads/menus/268/uvFKVhHs5CooPrLxOBmJOfux3ZrJPRyb/media/whatsappimage20260730at12.12.59.jpeg" data-lightgallery="item" style="flex:1;display:block;border-radius:16px;overflow:hidden;">
+              <img src="https://mantas86.vpdive.com/uploads/menus/268/uvFKVhHs5CooPrLxOBmJOfux3ZrJPRyb/media/whatsappimage20260730at12.12.59.jpeg" alt="Le club en action" style="width:100%;height:100%;min-height:122px;object-fit:cover;display:block;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. LES MEMBRES DU BUREAU (composant team-members DYNAMIQUE — conservé) ============================ -->
+<!-- Bloc trombinoscope généré par VP Dive (template="team-members-variant-2", data-render-controller-teams).
+     STRUCTURE CONSERVÉE TELLE QUELLE : VP Dive régénère la liste des membres côté serveur.
+     On ne restyle QUE le titre de section (h2 à la charte). -->
+<section class="section section-lg bg-gray-light novi-background bg-image teams" template="team-members-variant-2" data-render-controller-teams="6" menus="ZossdsrtjMkhWRHsmEwCjewll7P9gWez2MGWtLbUjzk" layout="team-members-variant-2" birthday="false" phone="false" style="background:#eef6fb;padding:64px 0;">
+  <div class="container">
+    <div class="col-sm-12 col-lg-12">
+      <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Les membres du bureau</h2>
+      <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 36px;">
+    </div>
+    <div class="row justify-content-center spacing-40 teams-container">
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/65e600510bdd2.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/fzOsmv4mNO1pQ7Aw-7WMrYzYtJ9xIOOc7jlMXv3mROQ" target="_blank">MARIN Jean-Paul</a><p disableeditable="" class="thumbnail-subtitle">Président</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/6152c34112ae4.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/SUPG9OW1zC_ybyd51pBCQo7IOY5FozbVkq9sLbC_IPc" target="_blank">GERMANEAU Cyril</a><p disableeditable="" class="thumbnail-subtitle">Vice président</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/676893e71d6f4.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/cBxXSD9p4gIeN4ccc0gcZoRcVdI8nPoTDX0pNDP3Hlk" target="_blank">BLANC Corine</a><p disableeditable="" class="thumbnail-subtitle">Trésorier</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/6905d369849f1.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/U2jX9xD_YnxYM_ppcTAVJojCb1fwwdPtUPgwjUvmXXs" target="_blank">LANDIVAR Andre</a><p disableeditable="" class="thumbnail-subtitle">Trésorier Adjoint</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/62c1843e172bc.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/q5GFHixb0KcdWDdwOtK587kZQ9WgIeDS_dJ4NRtkpEI" target="_blank">PAUTREAU Marie-Agnès</a><p disableeditable="" class="thumbnail-subtitle">Secrétaire</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/609e411f795da.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/m7fwi8EJVFz-vnpDdPphb9M8KwEr5hsaKqIEvxv4wNw" target="_blank">PLATON Yann</a><p disableeditable="" class="thumbnail-subtitle">Administrateur site</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/6311fc94d990d.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/adKqPz3DRqcCxuZr0rk9bxq867bB-U1zC56UpCkEbgg" target="_blank">GOTANEGRE Gaëtan</a><p disableeditable="" class="thumbnail-subtitle">Administrateur site - Animation</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/614e02ac35e1f.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/AN-RjpyAnbBlZb5vlyp8UY73VD3rfSUFHqR_RhjT4nM" target="_blank">BARRERE Béatrice</a><p disableeditable="" class="thumbnail-subtitle">Responsable Animation</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/files/images/default_profile_picture_men.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/io9r6N4W5A2IAxovlIxMeKfKyKzV_SaCSYBUtdCRua8" target="_blank">GUENECHAULT Michael</a><p disableeditable="" class="thumbnail-subtitle">Responsable matériel</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/files/images/default_profile_picture_men.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/uNHgdwiiZVD9rxdKOsAtw1RixxCh8WqPYostUVXrJGE" target="_blank">DUBESSAY Jean-Pierre</a><p disableeditable="" class="thumbnail-subtitle">Responsable Matériel</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/files/images/default_profile_picture_men.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/2LuffYkoZxkonqLRdPF32FOSPEooJtG4nb6tI0xKlBQ" target="_blank">PERDRIAU Stephane</a><p disableeditable="" class="thumbnail-subtitle">Responsable Materiel</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/614a0ddc4ae0d.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/uhxmB0-EakpkOIHSc-js3lihLlF7HNyJJc8L18db4KI" target="_blank">ENRIQUEZ Maria</a><p disableeditable="" class="thumbnail-subtitle">Sage</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/uploads/profile_picture/65ae8b21c3d7a.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/a13ghwckQdXZul-LINktG6WhAe5lkMO088l51ag0Umo" target="_blank">MEILLAUD Catherine</a><p disableeditable="" class="thumbnail-subtitle">Sage</p></div></div></div>
+      <div class="col-sm-6 col-lg-3 teams"><div disableeditable="" class="thumbnail-variant-2"><img disableeditable="" class="thumbnail-image" src="https://mantas86.vpdive.com/uploads/cache/picture_135/files/images/default_profile_picture_men.jpg" alt="" width="135" height="135"><div disableeditable="" class="thumbnail-body"><a disableeditable="" class="thumbnail-title" href="/f/chat/new/jsmessage/WOo9aXj_NW3uS7cRrdW2z4CfL0EocBfTZ1E_q_9TjW0" target="_blank">MONIE Robert</a><p disableeditable="" class="thumbnail-subtitle">Sage</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 4. LES ACTIVITÉS (6 cartes à la charte) ============================ -->
+<!-- Reconstruites en mini-cartes charte (le thème posait un fond dégradé bleu/cyan criard + cartes vertes). -->
+<section class="section novi-background" style="padding:64px 0;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center" style="margin-bottom:8px;">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Les activités</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+      </div>
+    </div>
+    <div class="row justify-content-center" style="margin-top:28px;">
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:28px 24px;height:100%;box-shadow:0 10px 30px rgba(6,45,99,.06);text-align:left;">
+          <div class="novi-icon fa-refresh fa" style="color:#20C4D8;font-size:30px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;color:#062D63;">Entraînements</h5>
+          <p style="color:#5a6a7a;margin:0;">3 séances par semaine vous sont proposées pour vous entraîner avec nous.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:28px 24px;height:100%;box-shadow:0 10px 30px rgba(6,45,99,.06);text-align:left;">
+          <div class="novi-icon fa-graduation-cap fa" style="color:#20C4D8;font-size:30px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;color:#062D63;">Formations</h5>
+          <p style="color:#5a6a7a;margin:0;">Débutant ou expert, tout le monde trouve sa place grâce à une équipe d'encadrants.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:28px 24px;height:100%;box-shadow:0 10px 30px rgba(6,45,99,.06);text-align:left;">
+          <div class="novi-icon fa-book fa" style="color:#20C4D8;font-size:30px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;color:#062D63;">Cours théoriques</h5>
+          <p style="color:#5a6a7a;margin:0;">Salle de cours ou visio, support papier ou en ligne : nous sommes équipés.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:28px 24px;height:100%;box-shadow:0 10px 30px rgba(6,45,99,.06);text-align:left;">
+          <div class="novi-icon fa-anchor fa" style="color:#20C4D8;font-size:30px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;color:#062D63;">Sorties</h5>
+          <p style="color:#5a6a7a;margin:0;">Notre agenda est publié en début de saison : inscrivez-vous aux nombreuses sorties organisées.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:28px 24px;height:100%;box-shadow:0 10px 30px rgba(6,45,99,.06);text-align:left;">
+          <div class="novi-icon fa-plane fa" style="color:#20C4D8;font-size:30px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;color:#062D63;">Voyages</h5>
+          <p style="color:#5a6a7a;margin:0;">Deux fois par an, le club organise des voyages selon les niveaux et les souhaits de ses membres.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" style="margin-bottom:24px;">
+        <div style="background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:28px 24px;height:100%;box-shadow:0 10px 30px rgba(6,45,99,.06);text-align:left;">
+          <div class="novi-icon fa-coffee fa" style="color:#20C4D8;font-size:30px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 8px;color:#062D63;">Détente</h5>
+          <p style="color:#5a6a7a;margin:0;">Un espace de détente est disponible au local : retrouvez les autres membres autour d'un verre.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 5. PRÉSENTATION PAR DOMINIQUE (texte club, encadré) ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#F7FBFD;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div style="background:#fff;border:1px solid #e3ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);padding:40px 42px;text-align:left;">
+          <div class="novi-icon fa-quote-left fa" style="color:#20C4D8;font-size:30px;margin-bottom:12px;"></div>
+          <h5 style="margin:0 0 4px;color:#062D63;">Présentation par Dominique</h5>
+          <p style="color:#8a97ab;font-size:13px;margin:0 0 20px;">07/07/2020</p>
+          <p style="color:#5a6a7a;margin:0;line-height:1.9;font-style:italic;">
+            Il pleuvait des cordes sur les trottoirs nostalgiques de la ville, ça sentait la moiteur d'une fin d'été tropical. Exactement comme aujourd'hui.<br><br>
+            C'était il y a vingt ans la première fois que j'ai poussé la porte de cet établissement, « <strong style="color:#062D63;">le Mantas Club</strong> ». J'étais juste entré pour me mettre à l'abri de l'averse, boire un verre, écouter un vieil air de jazz. Et aujourd'hui, vingt ans après, rien ou presque n'avait changé.<br><br>
+            Au comptoir, <strong style="color:#062D63;">Robert</strong>, un maton reconverti, fusil à canon scié planqué sous le zinc, au cas où. Je peux dire que c'est lui qui m'a appris les rudiments du self-défense. À la caisse, <strong style="color:#062D63;">Cathy</strong> et <strong style="color:#062D63;">Violette</strong> se partagent toujours les horaires de jour et de nuit, avec leur sourire bienveillant envers les paumés du petit matin.<br><br>
+            Sur la scène, le halo blafard d'un spot qui a connu des jours plus flamboyants parvient toujours à mettre en vedette la beauté hollywoodienne de l'afro-américaine <strong style="color:#062D63;">Béa</strong>. Elle chante faux, mais quelle émotion. Le jazz dans la peau, sûrement lié à cette complicité avec son pianiste, <strong style="color:#062D63;">Jerry</strong>, des doigts en or : brillantes études dans les plus grands conservatoires classiques, mais un refus de l'autorité et des institutions l'ont empêché de parvenir au sommet.<br><br>
+            Quand il a su que j'avais été un gratteux musicos, il m'a proposé un duo. Je me souviens le jour où je lui ai dit qu'il était hors de question qu'on s'appelle Dom et <strong style="color:#062D63;">Jerry</strong> sur une quelconque scène, il a pété les plombs. Heureusement, la patronne de l'établissement, sex-symbol des années 70, avait maté Mick Jagger himself, alors <strong style="color:#062D63;">Jerry</strong>, elle n'en faisait qu'une bouchée.<br><br>
+            Toujours accroché au zinc, un gars, un balèze plutôt taiseux, tout le monde l'appelle <strong style="color:#062D63;">Jean-Paul</strong>, c'est un marin je crois. Il parle de la mer avec l'amertume de ceux qui ne l'ont pas vue depuis longtemps. Je crois même avoir aperçu une fois une larme au coin de ses yeux bleus délavés par le sel de l'Océan.<br><br>
+            Curieusement, ce soir je n'ai pas vu les deux videurs, <strong style="color:#062D63;">Jicé</strong> et <strong style="color:#062D63;">Jéf</strong>. J'apprendrai plus tard qu'ils étaient toujours hospitalisés pour un sale coup avec une bande de névropathes ponctiformes à poil dur, comme nous l'a dit la légiste, le Dr <strong style="color:#062D63;">Dominique</strong>, dans une de ses notes : « il fait bio, il fait chiot » (c'est nul, j'ai jamais compris).<br><br>
+            Sur le parking, <strong style="color:#062D63;">Carlos</strong> et ses joueurs de guitare andalouse mettent l'ambiance autour d'un feu de camp. Pas facile un soir de pluie. Dans un coin sombre de la salle, <strong style="color:#062D63;">Lau</strong>, toujours seul, que ceux qui le connaissent un peu ont assimilé à Pierrot le fou. Son passe-temps favori : le lancer de couteaux dans des melons bien mûrs, à 10 pas. Sûrement un humour au 2ᵉ degré.<br><br>
+            Et puis dans la salle, toujours les fidèles, que je ne peux pas tous citer. Les initiés et ceux en passe de l'être, ceux qui guident les autres et ceux qui suivent. Ceux qui jouent l'autonomie et ceux qui n'en veulent pas. Ce serait trop long de parler de chacun, pourtant chacun me touche.<br><br>
+            J'ai été membre de ce club de jazz, « le Mantas Club », pendant vingt ans. J'étais juste entré pour me mettre à l'abri de l'averse et boire un verre. Quoi qu'il en soit, pour le premier flic venu : tout le monde plonge.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

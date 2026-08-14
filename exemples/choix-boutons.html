@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Choix des boutons — MANTAS 86</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+<link rel="stylesheet" href="../assets/css/style.css" />
+<link rel="stylesheet" href="../assets/css/novi.css" />
+<link rel="stylesheet" href="../assets/css/custom.css" />
+<script src="../assets/js/jquery.min.js"></script>
+<style>
+  body{font-family:"Roboto",system-ui,sans-serif;background:#eef6fb;color:#243746;margin:0;}
+  .wrap{max-width:960px;margin:0 auto;padding:30px 20px 80px;}
+  h1{font-family:"Montserrat",sans-serif;color:#062D63;text-transform:uppercase;letter-spacing:.04em;font-size:22px;}
+  .note{color:#5a6a7a;font-size:14px;margin-bottom:24px;}
+  .grp{background:#fff;border:1px solid #e3ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);padding:24px 26px;margin-bottom:22px;}
+  .grp h2{font-family:"Montserrat",sans-serif;color:#0E66A9;font-size:15px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 4px;}
+  .grp .d{color:#8a97ab;font-size:13px;margin:0 0 18px;}
+  .btnrow{display:flex;flex-wrap:wrap;gap:18px;align-items:center;}
+  .darkbg{background:linear-gradient(160deg,#0E66A9,#062D63);border-radius:12px;padding:22px;}
+  .cap{font-size:12px;color:#8a97ab;margin-top:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Déclinaisons de boutons — survole pour voir le hover</h1>
+  <p class="note">Rendu avec le vrai thème VP Dive (les effets de hover fonctionnent ici). Dis-moi la combinaison couleur + effet que tu préfères.</p>
+
+  <!-- EFFET UJARAK -->
+  <div class="grp">
+    <h2>Effet « ujarak » — le fond apparaît en s'étirant</h2>
+    <p class="d">C'est celui appliqué actuellement. Accent de hover : bleu clair du thème (#5798ef).</p>
+    <div class="btnrow">
+      <a class="btn btn-lg btn-effect-ujarak" href="#" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Cyan plein</span></a>
+      <a class="btn btn-lg btn-effect-ujarak" href="#" style="background:#062D63;border:2px solid #062D63;color:#fff;font-weight:700;margin:0;"><span>Bleu foncé plein</span></a>
+      <a class="btn btn-lg btn-effect-ujarak" href="#" style="background:transparent;border:2px solid #20C4D8;color:#0E66A9;font-weight:700;margin:0;"><span>Contour cyan</span></a>
+    </div>
+  </div>
+
+  <!-- EFFET ANIS -->
+  <div class="grp">
+    <h2>Effet « anis » — deux cercles traversent le bouton</h2>
+    <p class="d">Plus joueur / dynamique. Accent de hover : bleu clair du thème (#5798ef).</p>
+    <div class="btnrow">
+      <a class="btn btn-lg btn-effect-anis" href="#" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Cyan plein</span></a>
+      <a class="btn btn-lg btn-effect-anis" href="#" style="background:#062D63;border:2px solid #062D63;color:#fff;font-weight:700;margin:0;"><span>Bleu foncé plein</span></a>
+    </div>
+  </div>
+
+  <!-- EFFET AQIL -->
+  <div class="grp">
+    <h2>Effet « aqil » — un voile monte/descend</h2>
+    <p class="d">Accent de hover : gris-bleuté terne du thème (peu visible sur cyan).</p>
+    <div class="btnrow">
+      <a class="btn btn-lg btn-aqil btn-aqil--mod-1" href="#" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Cyan plein</span></a>
+      <a class="btn btn-lg btn-aqil btn-aqil--mod-2" href="#" style="background:#062D63;border:2px solid #062D63;color:#fff;font-weight:700;margin:0;"><span>Bleu foncé (mod-2)</span></a>
+    </div>
+  </div>
+
+  <!-- SANS EFFET (hover natif .btn simple) -->
+  <div class="grp">
+    <h2>Sans effet spécial — hover natif basique du thème</h2>
+    <p class="d">Le bouton .btn seul, sans classe d'effet.</p>
+    <div class="btnrow">
+      <a class="btn btn-lg" href="#" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Cyan plein</span></a>
+      <a class="btn btn-lg" href="#" style="background:#062D63;border:2px solid #062D63;color:#fff;font-weight:700;margin:0;"><span>Bleu foncé plein</span></a>
+    </div>
+  </div>
+
+  <!-- SUR FOND SOMBRE (comme dans les heros) -->
+  <div class="grp">
+    <h2>Rendu sur fond sombre (contexte hero)</h2>
+    <p class="d">Boutons tels qu'ils apparaissent sur une bannière.</p>
+    <div class="darkbg btnrow">
+      <a class="btn btn-lg btn-effect-ujarak" href="#" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Cyan (ujarak)</span></a>
+      <a class="btn btn-lg btn-effect-ujarak" href="#" style="background:transparent;border:2px solid #fff;color:#fff;font-weight:700;margin:0;"><span>Contour blanc (ujarak)</span></a>
+      <a class="btn btn-lg btn-effect-anis" href="#" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Cyan (anis)</span></a>
+    </div>
+  </div>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+<!-- NAV LOCALE (dev only) — retour index ; ne s'affiche qu'en localhost -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+
+</body>
+</html>

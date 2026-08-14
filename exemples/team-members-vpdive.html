@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Démo — Composant « Trombinoscope » VP Dive (stylisé)</title>
+<style>
+  :root{
+    --bleu:#062D63; --cyan:#20C4D8; --bleu-med:#0E66A9;
+    --gris:#5a6a7a; --gris-clair:#8a97ab; --fond:#eef6fb; --bord:#e3ecf3;
+    --ombre:0 10px 30px rgba(6,45,99,.08);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Roboto","Segoe UI",system-ui,sans-serif;color:#243746;background:var(--fond);}
+  header{background:linear-gradient(120deg,var(--bleu-med),var(--bleu));color:#fff;padding:34px 24px;text-align:center;}
+  header h1{margin:0 0 6px;font-family:"Montserrat",sans-serif;font-weight:700;font-size:22px;}
+  header h1 span{color:var(--cyan);}
+  header p{margin:0;color:rgba(255,255,255,.85);font-size:13px;max-width:660px;margin:8px auto 0;line-height:1.6;}
+  header code{background:rgba(255,255,255,.14);padding:1px 6px;border-radius:5px;}
+  main{max-width:1040px;margin:0 auto;padding:36px 18px 64px;}
+  .section-title{text-align:center;margin:0 0 30px;}
+  .section-title h2{color:var(--bleu);font-family:"Montserrat";margin:0;font-size:22px;}
+  .section-title hr{width:60px;height:3px;border:0;background:var(--cyan);margin:16px auto 0;border-radius:2px;}
+
+  /* --- Grille trombinoscope --- */
+  .team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;}
+  .member{
+    width:220px;background:#fff;border:1px solid var(--bord);border-radius:16px;
+    box-shadow:var(--ombre);overflow:hidden;text-align:center;padding:26px 18px 22px;
+  }
+  .member .avatar{
+    width:112px;height:112px;border-radius:50%;object-fit:cover;margin:0 auto 16px;
+    display:block;border:3px solid #fff;box-shadow:0 6px 18px rgba(6,45,99,.16);background:#dfeaf3;
+  }
+  /* avatar "silhouette" 100% maison (démo autonome, aucune dépendance externe) */
+  .member .avatar-ph{
+    width:112px;height:112px;border-radius:50%;margin:0 auto 16px;display:flex;
+    align-items:center;justify-content:center;border:3px solid #fff;
+    box-shadow:0 6px 18px rgba(6,45,99,.16);
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:34px;color:#fff;
+  }
+  .avatar-ph.a1{background:linear-gradient(160deg,#0E66A9,#062D63);}
+  .avatar-ph.a2{background:linear-gradient(160deg,#20C4D8,#0E66A9);color:#062D63;}
+  .member .m-name{
+    display:block;color:var(--bleu);font-family:"Montserrat",sans-serif;font-weight:700;
+    font-size:15px;text-decoration:none;margin:0 0 4px;
+  }
+  .member .m-name:hover{color:var(--bleu-med);}
+  .member .m-role{
+    display:inline-block;color:var(--bleu-med);background:#eaf5fb;font-size:12px;font-weight:600;
+    padding:4px 12px;border-radius:999px;margin-top:2px;
+  }
+  .member .m-contact{
+    display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--cyan);
+    font-size:12.5px;font-weight:600;text-decoration:none;
+  }
+  .member .m-contact:hover{color:#12b2c6;}
+
+  .note{margin-top:34px;font-size:12.5px;color:var(--gris);line-height:1.7;background:#fff;border:1px solid var(--bord);border-radius:12px;padding:16px 20px;}
+  .note b{color:var(--bleu);}
+  .fa{font-family:"FontAwesome";}
+  @media (max-width:520px){ .member{width:100%;max-width:300px;} }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+  <h1>Composant « <span>Trombinoscope</span> » VP Dive — proposition stylisée</h1>
+  <p>Reproduction fidèle du composant natif <code>team-members</code> (grille de membres du bureau / encadrants) : chaque carte reprend la <b>photo</b>, le <b>nom</b> (lien messagerie) et le <b>rôle</b> — habillé à la charte MANTAS 86. Données <b>fictives</b> : le composant est dynamique, la maquette ne fixe que le style.</p>
+</header>
+<main>
+  <div class="section-title">
+    <h2>Le bureau</h2>
+    <hr>
+  </div>
+
+  <div class="team-grid">
+
+    <div class="member">
+      <div class="avatar-ph a1">JM</div>
+      <a class="m-name" href="#">MARTIN Jean</a>
+      <div><span class="m-role">Président</span></div>
+      <a class="m-contact" href="#"><span class="fa fa-envelope-o"></span> Contacter</a>
+    </div>
+
+    <div class="member">
+      <div class="avatar-ph a2">CD</div>
+      <a class="m-name" href="#">DURAND Claire</a>
+      <div><span class="m-role">Vice-présidente</span></div>
+      <a class="m-contact" href="#"><span class="fa fa-envelope-o"></span> Contacter</a>
+    </div>
+
+    <div class="member">
+      <div class="avatar-ph a1">PB</div>
+      <a class="m-name" href="#">BERNARD Paul</a>
+      <div><span class="m-role">Trésorier</span></div>
+      <a class="m-contact" href="#"><span class="fa fa-envelope-o"></span> Contacter</a>
+    </div>
+
+    <div class="member">
+      <div class="avatar-ph a2">SL</div>
+      <a class="m-name" href="#">LEROY Sophie</a>
+      <div><span class="m-role">Secrétaire</span></div>
+      <a class="m-contact" href="#"><span class="fa fa-envelope-o"></span> Contacter</a>
+    </div>
+
+    <div class="member">
+      <div class="avatar-ph a1">AM</div>
+      <a class="m-name" href="#">MOREAU André</a>
+      <div><span class="m-role">Responsable matériel</span></div>
+      <a class="m-contact" href="#"><span class="fa fa-envelope-o"></span> Contacter</a>
+    </div>
+
+    <div class="member">
+      <div class="avatar-ph a2">BR</div>
+      <a class="m-name" href="#">ROUSSEAU Béatrice</a>
+      <div><span class="m-role">Responsable animation</span></div>
+      <a class="m-contact" href="#"><span class="fa fa-envelope-o"></span> Contacter</a>
+    </div>
+
+    <div class="member">
+      <div class="avatar-ph a1">YP</div>
+      <a class="m-name" href="#">PETIT Yann</a>
+      <div><span class="m-role">Administrateur du site</span></div>
+      <a class="m-contact" href="#"><span class="fa fa-envelope-o"></span> Contacter</a>
+    </div>
+
+    <div class="member">
+      <div class="avatar-ph a2">ME</div>
+      <a class="m-name" href="#">ENGEL Maria</a>
+      <div><span class="m-role">Membre du conseil</span></div>
+      <a class="m-contact" href="#"><span class="fa fa-envelope-o"></span> Contacter</a>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <b>Note pour l'équipe VP Dive.</b> Cette page est une <b>maquette de style</b> pour le composant
+    <code>team-members</code> (trombinoscope). La structure reprend celle générée par le plugin :
+    grille responsive (4 cartes par ligne en desktop, 2 en tablette, 1 en mobile), <b>photo</b> de profil,
+    <b>nom</b> cliquable (lien messagerie interne) et <b>rôle</b>. Les données affichées ici sont
+    <b>fictives</b> (avatars générés) — côté VP Dive, la liste reste alimentée dynamiquement par les
+    profils du club. Proposés à la charte&nbsp;: la carte blanche arrondie, l'avatar cerclé, la pastille
+    de rôle cyan/bleu et le lien « Contacter ».
+  </div>
+</main>
+<!-- NAV LOCALE (dev only) — retour index ; ne s'affiche qu'en localhost -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+
+</body></html>

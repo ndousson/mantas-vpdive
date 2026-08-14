@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nos activités — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "NOS ACTIVITÉS" (refonte "épuré / moderne")
+     À coller dans le bloc de contenu de la page "Nos activités" du builder VP Dive.
+     - N'utilise que des classes du thème Novi + du style inline (charte club).
+     - Section "spots" = grille de cartes MAISON (plus de carousel Owl : plus de JS, tout
+       visible sur mobile). Images en chemins ABSOLUS vers le live pour le rendu local.
+       => CÔTÉ VP DIVE, remettre les chemins RELATIFS (/uploads/... et /l/builder/...).
+     - Banniere hero : image Unsplash placeholder (TODO-IMAGE) à remplacer par une
+       photo du club côté VP Dive (mettre alors aspect-ratio = dimensions réelles).
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE (page secondaire : plus court) ============================ -->
+<!-- TODO-IMAGE : ambiance sous-marine / plongeurs (éditable via le module image VP Dive)
+     Page secondaire => hero à HAUTEUR FIXE RÉDUITE (min-height 300px), image en
+     background-size:cover => PLEINE LARGEUR, aucune bande. Léger recadrage haut/bas
+     absorbé par la faible hauteur. background-position:center pour garder le sujet centré. -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <!-- Overlay dégradé bleu marque -->
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Nos <span style="color:#20C4D8;">activités</span></h1>
+        <p class="subtitle-variant-3" style="margin:0 0 28px;color:rgba(255,255,255,.92);font-weight:400;">En eaux douces ou salées, toute l'année</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+          <a class="btn btn-lg btn-effect-ujarak" href="/w/contact-1?0=1" target="_parent" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Rejoindre le club</span></a>
+        </div>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 40px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Nos spots de plongée</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;">Piscine, fosse, carrières, mer : le club change de décor au fil de la saison. Cliquez sur un lieu pour en savoir plus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. LIEUX (grille de cartes maison — SANS slider Owl) ============================ -->
+<!-- Remplace le carousel Owl : plus de JS, chaque carte visible d'emblée (2×2 desktop, 1 col mobile).
+     ⚠️ ÉDITABILITÉ IMAGE : l'<img> est ENFANT DIRECT du <div> carte (comme les cartes de l'accueil),
+     PAS enveloppée dans un <a> → le module image VP Dive peut l'accrocher. L'overlay + l'étiquette sont
+     en position:absolute + pointer-events:none (n'interceptent pas le clic/l'éditeur). Seul le bloc
+     titre/lien du bas est un <a> cliquable. Images en ABSOLU => relatif côté VP Dive. -->
+<section class="section novi-background" style="padding:24px 0 72px;background:#eef6fb;">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- Piscine -->
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <div style="position:relative;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(6,45,99,.16);min-height:300px;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/VdJzkZIexDOTqtSE6Rhc8CorYy2PU0uGsBA1blamgWQ/media/media/piscineganteriepoitiers-1120x747.jpg" alt="Piscine de la Ganterie, Poitiers" style="display:block;width:100%;height:300px;object-fit:cover;">
+          <span style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(6,45,99,0) 30%,rgba(6,45,99,.35) 55%,rgba(6,45,99,.88) 100%);"></span>
+          <span style="position:absolute;top:18px;left:18px;pointer-events:none;background:rgba(32,196,216,.92);color:#062D63;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:999px;">Piscine</span>
+          <a href="/w/piscine?0=1" target="_parent" style="position:absolute;left:0;right:0;bottom:0;padding:22px 24px;text-align:left;text-decoration:none;">
+            <span style="display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.2;">Piscine de la Ganterie</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;color:#20C4D8;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;">Découvrir <span class="fa fa-angle-right"></span></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Fosse de Civaux -->
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <div style="position:relative;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(6,45,99,.16);min-height:300px;">
+          <img src="https://mantas86.vpdive.com/uploads/menus/268/VdJzkZIexDOTqtSE6Rhc8CorYy2PU0uGsBA1blamgWQ/media/civaux1.jpg" alt="Fosse de Civaux" style="display:block;width:100%;height:300px;object-fit:cover;">
+          <span style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(6,45,99,0) 30%,rgba(6,45,99,.35) 55%,rgba(6,45,99,.88) 100%);"></span>
+          <span style="position:absolute;top:18px;left:18px;pointer-events:none;background:rgba(32,196,216,.92);color:#062D63;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:999px;">Fosse</span>
+          <a href="/w/civaux?0=1" target="_parent" style="position:absolute;left:0;right:0;bottom:0;padding:22px 24px;text-align:left;text-decoration:none;">
+            <span style="display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.2;">Fosse de Civaux</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;color:#20C4D8;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;">Découvrir <span class="fa fa-angle-right"></span></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Saint Lin -->
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <div style="position:relative;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(6,45,99,.16);min-height:300px;">
+          <img src="https://mantas86.vpdive.com/uploads/menus/268/VdJzkZIexDOTqtSE6Rhc8CorYy2PU0uGsBA1blamgWQ/media/micr3369.jpg" alt="Carrière de Saint Lin" style="display:block;width:100%;height:300px;object-fit:cover;">
+          <span style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(6,45,99,0) 30%,rgba(6,45,99,.35) 55%,rgba(6,45,99,.88) 100%);"></span>
+          <span style="position:absolute;top:18px;left:18px;pointer-events:none;background:rgba(32,196,216,.92);color:#062D63;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:999px;">Carrière</span>
+          <a href="/w/saint-lin?0=1" target="_parent" style="position:absolute;left:0;right:0;bottom:0;padding:22px 24px;text-align:left;text-decoration:none;">
+            <span style="display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.2;">Carrière de Saint-Lin</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;color:#20C4D8;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;">Découvrir <span class="fa fa-angle-right"></span></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Roussay -->
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <div style="position:relative;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(6,45,99,.16);min-height:300px;">
+          <img src="https://mantas86.vpdive.com/l/builder/app/projects/268/VdJzkZIexDOTqtSE6Rhc8CorYy2PU0uGsBA1blamgWQ/media/media/roussay-512x340.jpg" alt="Carrière de Roussay" style="display:block;width:100%;height:300px;object-fit:cover;">
+          <span style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(6,45,99,0) 30%,rgba(6,45,99,.35) 55%,rgba(6,45,99,.88) 100%);"></span>
+          <span style="position:absolute;top:18px;left:18px;pointer-events:none;background:rgba(32,196,216,.92);color:#062D63;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:999px;">Carrière</span>
+          <a href="/w/roussay?0=1" target="_parent" style="position:absolute;left:0;right:0;bottom:0;padding:22px 24px;text-align:left;text-decoration:none;">
+            <span style="display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.2;">Carrière de Roussay</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;color:#20C4D8;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;">Découvrir <span class="fa fa-angle-right"></span></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

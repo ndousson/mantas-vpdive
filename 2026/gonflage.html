@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Documents · Gonflage — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "DOCUMENTS / GONFLAGE"
+     =========================================================================
+     Contrairement aux pages Membres/Comité/Encadrants (composant "documents"
+     avec arborescence), Gonflage utilise le composant "documents-variant-8" =
+     LISTE PLATE de fichiers (pas de dossiers), 5 PDF (tours de gonflage par saison
+     + liste des personnes habilitées).
+       - Ce composant reste DYNAMIQUE côté VP Dive. Le tableau ci-dessous (section 3)
+         est un MOCK de STYLE reflétant les fichiers actuels — il illustre le rendu,
+         pas un remplacement du composant.
+       - Éléments PERSONNALISABLES/collables : HERO + INTRO.
+
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - Liens/images live en chemins ABSOLUS => remettre en relatif côté VP Dive.
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE ============================ -->
+<!-- TODO-IMAGE : identique aux autres pages "Documents" pour cohérence -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1559825481-12a05cc00344?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Tours de <span style="color:#20C4D8;">gonflage</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Le planning des tours de gonflage et les personnes habilitées</p>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 24px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Saison 2025-2026</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;">Consultez le planning de gonflage en cours pour la saison, retrouvez les versions finalisées des saisons passées et la liste des personnes habilitées à gonfler les blocs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3a. À LA UNE — TABLEUR EN LIGNE (bloc STATIQUE : 1 lien Google Sheets) ============================ -->
+<!-- Sur le live c'est un bloc distinct mettant en avant le planning vivant de la saison (Google Sheets). -->
+<section class="section novi-background" style="padding:12px 0 40px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-8">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px;background:linear-gradient(160deg,#0E66A9,#062D63);border-radius:16px;padding:26px 30px;box-shadow:0 10px 30px rgba(6,45,99,.12);text-align:left;">
+          <span class="fa fa-table" style="color:#20C4D8;font-size:34px;flex-shrink:0;"></span>
+          <div style="flex:1 1 220px;">
+            <h5 style="margin:0 0 4px;color:#fff;">Tours de gonflage — saison 2025-2026</h5>
+            <p style="margin:0;color:rgba(255,255,255,.8);font-size:14px;">Le planning en cours de la saison, tenu à jour en ligne (Google&nbsp;Sheets).</p>
+          </div>
+          <a class="btn btn-effect-ujarak" href="https://docs.google.com/spreadsheets/d/1Obuh2D7U02qAn5M5aQ95z3ne29wEi-ur4Ql2ici4X-o/edit?usp=sharing" target="_blank" style="flex-shrink:0;background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;"><span>Ouvrir le planning</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3b. PLANNINGS FINALISÉS — PDF (MOCK de STYLE — composant "documents-variant-8" dynamique côté VP Dive) ============================ -->
+<!-- Composant "documents-variant-8" = liste PLATE de PDF (pas d'arborescence). Contenu régénéré par VP Dive. -->
+<section class="section novi-background" style="padding:24px 0 64px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center" style="margin-bottom:16px;">
+        <h3 style="color:#062D63;margin:0;font-size:20px;">Plannings finalisés</h3>
+        <hr class="divider-sm" style="width:50px;height:3px;border:0;background:#20C4D8;margin:14px auto 0;">
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-10">
+        <div style="background:#fff;border:1px solid #e3ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);overflow:hidden;">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;text-align:left;">
+              <thead>
+                <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+                  <th style="padding:16px 20px;font-weight:600;" colspan="2">Document</th>
+                  <th style="padding:16px 20px;font-weight:600;text-align:right;white-space:nowrap;">Télécharger</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-top:1px solid #eef1f5;">
+                  <td style="padding:14px 20px;width:52px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+                  <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Tours de gonflage 2025-2026</td>
+                  <td style="padding:14px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Gonflage/2025-2026.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+                </tr>
+                <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+                  <td style="padding:14px 20px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+                  <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Personnes habilitées 2022-2023</td>
+                  <td style="padding:14px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Gonflage/personnes%20habilit%C3%A9es%202022-23%20Feuil1.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+                </tr>
+                <tr style="border-top:1px solid #eef1f5;">
+                  <td style="padding:14px 20px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+                  <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Tours de gonflage 2022-2023</td>
+                  <td style="padding:14px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Gonflage/2022-2023%20jpm.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+                </tr>
+                <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+                  <td style="padding:14px 20px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+                  <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Tours de gonflage 2021-2022</td>
+                  <td style="padding:14px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Gonflage/2021-2022.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p style="color:#8a97ab;font-size:12.5px;margin:14px 4px 0;font-style:italic;">Aperçu de style — la liste réelle des documents est gérée dynamiquement par VP Dive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

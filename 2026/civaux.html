@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fosse de Civaux — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "SPOT / FOSSE DE CIVAUX" (liée depuis "Nos activités")
+     - Style INLINE uniquement. Images live en ABSOLU => relatif côté VP Dive.
+     - Le carousel Owl d'origine (1 seule image) est remplacé par une image simple.
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO ============================ -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://mantas86.vpdive.com/uploads/menus/268/U4fGBKvS3yh2mo6nCDizLjd1ZqEsb8e0OW9NXrtkVIp/media/civaux1.jpg'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Fosse de <span style="color:#20C4D8;">Civaux</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Une eau à 28 °C, idéale pour se perfectionner</p>
+  </div>
+</section>
+
+<!-- ============================ 2. PRÉSENTATION + IMAGE ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center" style="align-items:center;">
+      <div class="col-sm-12 col-lg-6 text-left" style="margin-bottom:24px;">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0 0 14px;">Plonger en fosse</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:0 0 22px;">
+        <p style="color:#5a6a7a;margin:0 0 16px;line-height:1.9;">Tout membre du club peut aller plonger en fosse, moyennant <strong style="color:#062D63;">12 € par personne</strong>, à régler avant la séance. L'eau, à <strong style="color:#062D63;">28 °C</strong>, est claire et limpide.</p>
+        <p style="color:#5a6a7a;margin:0;line-height:1.9;">Un lieu idéal pour perfectionner votre niveau 1, préparer votre niveau 2, ou réviser et refaire quelques exercices d'un niveau 2 acquis les années passées. De quoi se préparer en toute sécurité pour la saison.</p>
+      </div>
+      <div class="col-sm-12 col-lg-6" style="margin-bottom:24px;">
+        <img src="https://mantas86.vpdive.com/uploads/menus/268/U4fGBKvS3yh2mo6nCDizLjd1ZqEsb8e0OW9NXrtkVIp/media/civaux1.jpg" alt="Fosse de Civaux" style="display:block;width:100%;height:100%;min-height:280px;object-fit:cover;border-radius:16px;box-shadow:0 14px 40px rgba(20,40,80,.10);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

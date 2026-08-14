@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Documents · Membres — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "DOCUMENTS / MEMBRES" (MAQUETTE pour l'équipe VP Dive)
+     =========================================================================
+     Maquette de rendu à la charte, à fournir à l'équipe VP Dive pour intégration
+     dans le composant documentaire.
+
+     Le tableau reproduit la NAVIGATION PAR DOSSIER du composant d'origine :
+       - au départ : liste des dossiers (#membres-list) ;
+       - clic sur un dossier -> affiche ses PDF (#dir-...) + lien "< Dossiers" pour remonter.
+     Navigation en onclick inline (comme le composant VP Dive d'origine).
+     Contenu = SIMULATION STATIQUE au 2026-08-11 (52 fichiers, 9 dossiers) montrant le STYLE cible.
+
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - Liens live en chemins ABSOLUS => remettre en relatif cote VP Dive.
+     - Banniere hero : image Unsplash placeholder (TODO-IMAGE) a valider.
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIERE ============================ -->
+<!-- TODO-IMAGE : image sobre en lien avec le club / la plongee (a choisir) -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1559825481-12a05cc00344?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Documents <span style="color:#20C4D8;">membres</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">L'espace documentaire du club</p>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 24px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Vos documents</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;">Retrouvez les documents du club classés par dossier : statuts et règlement intérieur, comptes rendus du comité directeur, assemblées générales, informations plongée… Ouvrez un dossier pour accéder à ses fichiers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. TABLEAU DES DOCUMENTS (SIMULATION NAVIGABLE a la charte) ============================ -->
+<section class="section novi-background" style="padding:24px 0 40px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-10">
+        <div style="background:#fff;border:1px solid #e3ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);overflow:hidden;">
+          <div style="overflow-x:auto;">
+      <div id="membres-list">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:16px 20px;font-weight:600;" colspan="2">Dossier</th>
+              <th style="padding:16px 20px;font-weight:600;text-align:right;white-space:nowrap;">Contenu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fclub-mantas').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Club Mantas</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">2 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fcdr-du-codir').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">CDR du CoDir</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">25 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fplong-e').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Plongée</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">5 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-26-01-13').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 26-01-13</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">4 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-25-01-15').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 25-01-15</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">4 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-24-01-17').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 24-01-17</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">4 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-22-10-19').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 22-10-19</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">3 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fag-21-09-31').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">AG 21-09-31</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">3 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;cursor:pointer;" onclick="document.getElementById('membres-list').style.display='none';document.getElementById('dir-fracine').style.display='block';">
+              <td style="padding:14px 20px;width:52px;"><span class="fa fa-folder" style="color:#0E66A9;font-size:22px;"></span></td>
+              <td style="padding:14px 20px;font-weight:600;color:#062D63;font-size:15px;">Racine</td>
+              <td style="padding:14px 20px;text-align:right;white-space:nowrap;color:#8a97ab;font-size:13px;">2 documents <span class="fa fa-angle-right" style="margin-left:10px;color:#20C4D8;"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fclub-mantas" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fclub-mantas').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>Club Mantas
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Statuts.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/Club%20Mantas/Statuts.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Règlement intérieur.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/Club%20Mantas/R%C3%A8glement%20int%C3%A9rieur.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fcdr-du-codir" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fcdr-du-codir').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>CDR du CoDir
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">26-06-20 CR Réunion CD.ENCADRANTS BENEVOLES.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/26-06-20%20CR%20R%C3%A9union%20CD.ENCADRANTS%20BENEVOLES.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">26-05-28 CR Reunion CD.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/26-05-28%20CR%20Reunion%20CD.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">26-02-03 CR Reunion CD.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/26-02-03%20CR%20Reunion%20CD.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">26-03-31 CR Réunion CD.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/26-03-31%20CR%20R%C3%A9union%20CD.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-11-17 CR Reunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/25-11-17%20CR%20Reunion%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-12-17 CR Reunion CD.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/25-12-17%20CR%20Reunion%20CD.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-10-06 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/25-10-06%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-08-26 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/25-08-26%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-06-17 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/25-06-17%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-05-06 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/25-05-06%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-02-26 CR Réunion C.D  .pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/25-02-26%20CR%20R%C3%A9union%20C.D%20%20.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-12-17 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-12-17%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">23-07-05 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/23-07-05%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-03-05 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-03-05%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">25-01-21 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/25-01-21%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-11-05CR Réunion C.D  - copie 2.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-11-05CR%20R%C3%A9union%20C.D%20%20-%20copie%202.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-10-01CR Réunion C.D  - copie.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-10-01CR%20R%C3%A9union%20C.D%20%20-%20copie.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-08-28 CR Réunion C.D .pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-08-28%20CR%20R%C3%A9union%20C.D%20.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-06-04 CR Réunion C.D..pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-06-04%20CR%20R%C3%A9union%20C.D..pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-04-16 CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-04-16%20CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-01-22 CR Réunion C.D   -  (1).pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-01-22%20CR%20R%C3%A9union%20C.D%20%20%20-%20%20%281%29.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">24-01-10 CR Réunion C.D .pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/24-01-10%20CR%20R%C3%A9union%20C.D%20.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">23-12-11CR Réunion C.D .pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/23-12-11CR%20R%C3%A9union%20C.D%20.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">23-10-10CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/23-10-10CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">23-08-28CR Réunion C.D.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/CDR%20du%20CoDir/23-08-28CR%20R%C3%A9union%20C.D.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fplong-e" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fplong-e').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>Plongée
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">RI-StLin-2024-04-24.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/Plong%C3%A9e/RI-StLin-2024-04-24.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">PLAN_ST_LIN_2026.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/Plong%C3%A9e/PLAN_ST_LIN_2026.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Consignes civaux 2023.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/Plong%C3%A9e/Consignes%20civaux%202023.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Code du Sport.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/Plong%C3%A9e/Code%20du%20Sport.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Tables MN90.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/Plong%C3%A9e/Tables%20MN90.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fag-26-01-13" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fag-26-01-13').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 26-01-13
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">PV_AG_2026 - copie.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2026-01-13/PV_AG_2026%20-%20copie.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">graphiques recettes dépenses 2025.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2026-01-13/graphiques%20recettes%20d%C3%A9penses%202025.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Compte de résultat 2025.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2026-01-13/Compte%20de%20r%C3%A9sultat%202025.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Bilan Moral du président.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2026-01-13/Bilan%20Moral%20du%20pr%C3%A9sident.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fag-25-01-15" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fag-25-01-15').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 25-01-15
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">PV_AG_2025_final2 20250212.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2025-01-15/PV_AG_2025_final2%2020250212.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">2024 compte de résultat.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2025-01-15/2024%20compte%20de%20r%C3%A9sultat.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Bilan Moralm President AG 2025.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2025-01-15/Bilan%20Moralm%20President%20AG%202025.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">modif Statuts MANTAS 2025 copie.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2025-01-15/modif%20Statuts%20MANTAS%202025%20copie.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fag-24-01-17" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fag-24-01-17').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 24-01-17
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Bilan resp technique AG 17-01-2024-Magali Agostini.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2024-01-17/Bilan%20resp%20technique%20AG%2017-01-2024-Magali%20Agostini.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">RAPPORT MORAL V2-  ASSEMBLEE GENERALE DU 17 JANVIER 2024.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2024-01-17/RAPPORT%20MORAL%20V2-%20%20ASSEMBLEE%20GENERALE%20DU%2017%20JANVIER%202024.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Bilan MANTAS 2022-2023.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2024-01-17/Bilan%20MANTAS%202022-2023.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">PV - Assemblée Générale du 17-01-2024.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2024-01-17/%20PV%20-%20Assembl%C3%A9e%20G%C3%A9n%C3%A9rale%20du%2017-01-2024.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fag-22-10-19" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fag-22-10-19').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 22-10-19
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">BILAN FINANCIER MANTAS 2021-22 AG.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2022-10-19/BILAN%20FINANCIER%20MANTAS%202021-22%20AG.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">2022- PV AG.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2022-10-19/2022-%20PV%20AG.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">2022 - Rapport moral MANTAS PRESIDENTE 19-10 - Saison 2021-2022.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2022-10-19/2022%20-%20Rapport%20moral%20MANTAS%20PRESIDENTE%2019-10%20-%20Saison%202021-2022.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fag-21-09-31" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fag-21-09-31').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>AG 21-09-31
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">2021 - Rapport moral MANTAS PRESIDENTE 20-09 - Saison 2020 - 2021 .pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2021-09-31/2021%20-%20Rapport%20moral%20MANTAS%20PRESIDENTE%2020-09%20-%20Saison%202020%20-%202021%20.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">2021 - BILAN FINANCIER MANTAS 2020-21 AG.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2021-09-31/2021%20-%20BILAN%20FINANCIER%20MANTAS%202020-21%20AG.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">2021 - CR - Assemblée Générale du 21-09.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/AG%2021-09-31/2021%20-%20CR%20-%20Assembl%C3%A9e%20G%C3%A9n%C3%A9rale%20du%2021-09.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dir-fracine" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead>
+            <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+              <th style="padding:14px 20px;font-weight:600;" colspan="3">
+                <a onclick="document.getElementById('dir-fracine').style.display='none';document.getElementById('membres-list').style.display='block';" style="cursor:pointer;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:10px;"><span class="fa fa-angle-left"></span> Dossiers</a>
+                <span style="margin:0 10px;color:rgba(255,255,255,.5);">/</span>Racine
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #eef1f5;background:#ffffff;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">Accès au CSNA sur VPDIVE.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/Acc%C3%A8s%20au%20CSNA%20sur%20VPDIVE.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+              <td style="padding:12px 20px;width:44px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;"></span></td>
+              <td style="padding:12px 20px;color:#243746;font-size:14px;">VPDIVE.pdf</td>
+              <td style="padding:12px 20px;text-align:right;white-space:nowrap;"><a href="https://vpdive.com/uploads/file_manager/ZYCfnTI1lJxoZOH88LOfIPLS3Aoi3qZxtnBjv8TJ3dI/Membres/VPDIVE.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 4. LIENS & REFERENCES (bloc STATIQUE -> tableau stylise) ============================ -->
+<section class="section novi-background" style="padding:40px 0 64px;background:#eef6fb;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center" style="margin-bottom:12px;">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Liens &amp; références</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 14px;">
+        <p style="color:#5a6a7a;margin:0;">Ressources externes utiles et documents de référence.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-10">
+        <div style="background:#fff;border:1px solid #e3ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);overflow:hidden;">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;text-align:left;font-size:15px;color:#243746;">
+              <thead>
+                <tr style="background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;">
+                  <th style="padding:16px 20px;font-weight:600;">Ressource</th>
+                  <th style="padding:16px 20px;font-weight:600;text-align:right;white-space:nowrap;">Consulter</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-top:1px solid #eef1f5;">
+                  <td style="padding:14px 20px;"><span style="display:flex;align-items:center;gap:12px;"><span class="fa fa-hand-paper-o" style="color:#0E66A9;font-size:20px;flex-shrink:0;"></span><span style="font-weight:600;color:#062D63;">Signes conventionnels en plongée (vidéos FFESSM)</span></span></td>
+                  <td style="padding:14px 20px;text-align:right;"><a href="https://plongee.ffessm.fr/les-signes-de-plongee" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-external-link"></span> Ouvrir</a></td>
+                </tr>
+                <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+                  <td style="padding:14px 20px;"><span style="display:flex;align-items:center;gap:12px;"><span class="fa fa-hand-paper-o" style="color:#0E66A9;font-size:20px;flex-shrink:0;"></span><span style="font-weight:600;color:#062D63;">Signes conventionnels en plongée</span></span></td>
+                  <td style="padding:14px 20px;text-align:right;"><a href="https://www.plongee-plaisir.com/fr/les-signes-de-plongee/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-external-link"></span> Ouvrir</a></td>
+                </tr>
+                <tr style="border-top:1px solid #eef1f5;">
+                  <td style="padding:14px 20px;"><span style="display:flex;align-items:center;gap:12px;"><span class="fa fa-book" style="color:#0E66A9;font-size:20px;flex-shrink:0;"></span><span style="font-weight:600;color:#062D63;">MFT (Manuel de Formation Technique)</span></span></td>
+                  <td style="padding:14px 20px;text-align:right;"><a href="https://mft.ffessm.fr/pages/documents" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-external-link"></span> Ouvrir</a></td>
+                </tr>
+                <tr style="border-top:1px solid #eef1f5;background:#fafcfe;">
+                  <td style="padding:14px 20px;"><span style="display:flex;align-items:center;gap:12px;"><span class="fa fa-file-pdf-o" style="color:#e0564b;font-size:20px;flex-shrink:0;"></span><span style="font-weight:600;color:#062D63;">Charte 50 m (dimanche matin, bassin 50 m)</span></span></td>
+                  <td style="padding:14px 20px;text-align:right;"><a href="https://vpdive.com/uploads/menus/268/YPWXBpT6qHwsAC8RuyU3gDKIeLVoNQxFcJ21Ofh9l40/media/chartedudimanchematinbassinde50m.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#20C4D8;color:#fff;font-size:13px;font-weight:600;text-decoration:none;"><span class="fa fa-download"></span> PDF</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

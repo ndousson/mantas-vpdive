@@ -1,0 +1,13 @@
+# Dépendances (non versionnées)
+node_modules/
+
+# macOS
+.DS_Store
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Logs / temporaires
+*.log

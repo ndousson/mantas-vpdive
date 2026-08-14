@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Media · Vidéos — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "MEDIA / VIDÉOS"
+     =========================================================================
+     ⚠️ IMPORTANT — LA GRILLE DE VIDÉOS EST UN MODULE VP DIVE EN PARTIE DYNAMIQUE.
+     Chaque vignette (thumbnail-classic + data-lightgallery="dynamic") s'appuie sur
+     le module pour : (1) EXTRAIRE la miniature de la vidéo YouTube (thumb
+     "maxresdefault"), (2) INITIALISER le lecteur lightGallery vidéo au clic.
+     => NE PAS remplacer ce module par du HTML statique : on casserait la lecture
+        vidéo et l'extraction auto des miniatures.
+
+     MODE D'EMPLOI CÔTÉ VP DIVE :
+       1) Garder le MODULE VIDÉO existant tel quel (ne pas y toucher).
+       2) Insérer UNIQUEMENT le HERO + l'INTRO ci-dessous AU-DESSUS de ce module.
+     (Une maquette de STYLE de la grille — pour un éventuel restyling ultérieur du
+      module — est disponible dans exemples/demo-videos-style.html.)
+
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - Banniere hero : image Unsplash placeholder (TODO-IMAGE).
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE ============================ -->
+<!-- TODO-IMAGE : ambiance sous-marine -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Nos <span style="color:#20C4D8;">vidéos</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Les plongées du club filmées par nos vidéastes</p>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 24px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Les vidéos du club</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;">Épaves, faune sous-marine et croisières, filmées lors de nos sorties. Cliquez sur une vignette pour lancer la vidéo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. MODULE VIDÉOS (DYNAMIQUE VP DIVE — NE PAS COLLER / NE PAS MODIFIER) ============================ -->
+<!-- ▼▼▼ Ce module est déjà présent dans la page VP Dive.
+        Il gère l'extraction des miniatures YouTube et la lecture lightGallery.
+        NE PAS le coller ni le remplacer : conserver le module vidéo d'origine.
+        (Maquette de style : exemples/demo-videos-style.html) ▲▲▲ -->
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

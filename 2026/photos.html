@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Media · Photos — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "MEDIA / PHOTOS" (refonte "épuré / moderne")
+     =========================================================================
+     - Galerie = 4 albums/photos. On réutilise l'approche VALIDÉE : grille de
+       cartes-photo + ZOOM lightGallery au clic (pas de slider Owl).
+     - lightGallery : conteneur data-lightgallery="group" + chaque photo dans
+       <a data-lightgallery="item" href="IMG_GRAND_FORMAT"><img src="VIGNETTE"></a>.
+       Le zoom s'active une fois la page publiée dans VP Dive (JS plateforme).
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - Images live en chemins ABSOLUS => remettre en relatif côté VP Dive.
+       Pour AJOUTER une photo : dupliquer un bloc <div class="col-*"> ci-dessous.
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE ============================ -->
+<!-- TODO-IMAGE : ambiance sous-marine / photo du club -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Nos <span style="color:#20C4D8;">photos</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Les sorties, les épaves et les moments du club en images</p>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 24px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Galerie</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;">Un aperçu de nos plongées et de nos sorties. Cliquez sur une photo pour l'afficher en grand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. GRILLE DE PHOTOS (cartes-photo + zoom lightGallery) ============================ -->
+<section class="section novi-background" style="padding:24px 0 64px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center" data-lightgallery="group">
+
+      <!-- 1 — Le Rubis -->
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://vpdive.com/uploads/menus/268/hQoUGMlSwqx2sXuyUQo2kRrQvPenHkcm/media/micr3214.jpg" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <img src="https://vpdive.com/uploads/menus/268/hQoUGMlSwqx2sXuyUQo2kRrQvPenHkcm/media/micr32141.jpg" alt="Le Rubis" style="display:block;width:100%;height:260px;object-fit:cover;" />
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;">Le Rubis</span>
+            <span class="fa fa-search-plus" style="color:#20C4D8;font-size:18px;"></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2 — Le Togo -->
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://vpdive.com/uploads/menus/268/hQoUGMlSwqx2sXuyUQo2kRrQvPenHkcm/media/micr31851.jpg" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <img src="https://vpdive.com/uploads/menus/268/hQoUGMlSwqx2sXuyUQo2kRrQvPenHkcm/media/micr31851.jpg" alt="Le Togo" style="display:block;width:100%;height:260px;object-fit:cover;" />
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;">Le Togo</span>
+            <span class="fa fa-search-plus" style="color:#20C4D8;font-size:18px;"></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3 — Le Mantas à Fréjus 2023 -->
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://vpdive.com/uploads/menus/268/hQoUGMlSwqx2sXuyUQo2kRrQvPenHkcm/media/93ff1dd18dce4683b70ef15658c3500e.jpeg" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <img src="https://vpdive.com/uploads/menus/268/hQoUGMlSwqx2sXuyUQo2kRrQvPenHkcm/media/93ff1dd18dce4683b70ef15658c3500e-1.png" alt="Le Mantas à Fréjus 2023" style="display:block;width:100%;height:260px;object-fit:cover;" />
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;">Le Mantas à Fréjus 2023</span>
+            <span class="fa fa-search-plus" style="color:#20C4D8;font-size:18px;"></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 4 — Le Mantas à Hendaye 2023 -->
+      <div class="col-sm-6" style="margin-bottom:30px;">
+        <a data-lightgallery="item" href="https://vpdive.com/uploads/menus/268/hQoUGMlSwqx2sXuyUQo2kRrQvPenHkcm/media/237b24c480824579bc7abb51010b9d63-1.jpeg" style="display:block;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,80,.10);text-decoration:none;">
+          <img src="https://vpdive.com/uploads/menus/268/hQoUGMlSwqx2sXuyUQo2kRrQvPenHkcm/media/237b24c480824579bc7abb51010b9d63.png" alt="Le Mantas à Hendaye 2023" style="display:block;width:100%;height:260px;object-fit:cover;" />
+          <div style="background:linear-gradient(160deg,#0E66A9,#062D63);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;">Le Mantas à Hendaye 2023</span>
+            <span class="fa fa-search-plus" style="color:#20C4D8;font-size:18px;"></span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

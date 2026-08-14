@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "CONTACT" (refonte "épuré / moderne")
+     À coller dans le bloc de contenu de la page "Contact" du builder VP Dive.
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - Le FORMULAIRE VP Dive (rd-mailform) est conservé INTACT : action, champs `name`,
+       `data-constraints`, honeypot + `form_ts`, widget captcha <cap-widget>.
+       On ne restyle QUE l'habillage (carte, titres) + le bouton (cyan inline).
+     - Images live en chemins ABSOLUS pour le rendu local => remettre en RELATIF côté VP Dive.
+     - Banniere hero : image Unsplash placeholder (TODO-IMAGE).
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO / BANNIÈRE (page secondaire : plus court) ============================ -->
+<!-- TODO-IMAGE : ambiance club / mer (éditable via le module image VP Dive) -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Contactez-<span style="color:#20C4D8;">nous</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">Une question ? Une envie de plonger ? Écrivez-nous.</p>
+  </div>
+</section>
+
+<!-- ============================ 2. FORMULAIRE DE CONTACT (rd-mailform VP Dive — mécanique conservée) ============================ -->
+<section class="section novi-background" style="padding:64px 0;background:#eef6fb;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center" style="margin-bottom:8px;">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Formulaire de contact</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 14px;">
+        <p style="color:#5a6a7a;margin:0;">On vous répond dans les meilleurs délais.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-8">
+        <!-- Carte blanche autour du formulaire (habillage charte). Le <form> reste intact. -->
+        <div style="background:#fff;border:1px solid #e3ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);padding:36px 34px;text-align:left;">
+          <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="/f/contactForm">
+            <div class="row row-sm-bottom spacing-20">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" id="cf-name" type="text" name="name" data-constraints="@Required">
+                  <label class="form-label" for="cf-name">Votre nom</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" id="cf-last-name" type="text" name="last-name" data-constraints="@Required">
+                  <label class="form-label" for="cf-last-name">Votre prénom</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" id="cf-email" type="email" name="email" data-constraints="@Email @Required">
+                  <label class="form-label" for="cf-email">E-mail</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" id="cf-phone" type="text" name="phone" data-constraints="@Numeric">
+                  <label class="form-label" for="cf-phone">Téléphone</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <textarea class="form-control" id="cf-message" name="message" data-constraints="@Required"></textarea>
+                  <label class="form-label" for="cf-message">Votre message</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <button class="btn btn-primary btn-block btn-effect-ujarak" type="submit" style="background:#20C4D8;border-color:#20C4D8;color:#062D63;font-weight:700;">Envoyer le message</button>
+              </div>
+            </div>
+            <div class="privacy-notice" style="font-size:11px;color:#8a97ab;margin-top:14px;">
+              <u>Vos données personnelles</u> : les informations saisies dans ce formulaire sont utilisées uniquement pour traiter et répondre à votre demande. Elles ne sont pas utilisées à d'autres fins. Pour en savoir plus sur la gestion de vos données et vos droits, consultez notre <a href="https://vpdive.com/w/politique-de-confidentialite-1" target="_blank" style="color:#0E66A9;">Politique de confidentialité</a>.
+            </div>
+            <div class="form-wrap">
+              <div class="recaptcha"><cap-widget data-cap-api-endpoint="/f/captcha/9LoII965243t/" data-cap-i18n-initial-state="Je ne suis pas un robot" data-cap-i18n-verifying-label="Vérification en cours…" data-cap-i18n-solved-label="Vérifié" data-cap-i18n-error-label="Erreur, réessayez" data-cap-i18n-verify-aria-label="Vérifier que vous êtes humain" data-cap-i18n-verifying-aria-label="Vérification en cours, veuillez patienter" data-cap-i18n-verified-aria-label="Vérification réussie, vous pouvez continuer" data-cap-i18n-error-aria-label="Une erreur s'est produite, réessayez"></cap-widget></div>
+              <!-- Honeypot anti-spam (conservé tel quel) -->
+              <div class="hp-wrap" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+                <label for="internal_note_5521" aria-hidden="true" tabindex="-1">Votre site web</label>
+                <input type="text" id="internal_note_5521" name="internal_note_5521" tabindex="-1" autocomplete="off" aria-hidden="true" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-protonpass-ignore="true" data-keeper-ignore="true" data-dashlane-ignore="true" data-form-type="other">
+              </div>
+              <input type="hidden" name="form_ts" value="">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. CONTACT RÉFÉRENT (carte à la charte) ============================ -->
+<!-- Refait en carte statique (le composant team-members-variant-4 d'origine n'avait qu'un seul
+     membre codé en dur, sans rendu dynamique). -->
+<section class="section novi-background" style="padding:64px 0;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center" style="margin-bottom:8px;">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Votre interlocuteur</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+      </div>
+    </div>
+
+    <div class="row justify-content-center" style="margin-top:28px;">
+      <div class="col-sm-10 col-lg-6">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px;background:#fff;border:1px solid #eef1f5;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.06);padding:24px 28px;text-align:left;">
+          <img src="https://mantas86.vpdive.com/uploads/menus/268/PUgUKGelqMth3umqB172Wk4Niyb5kuhu/media/615139e4b1ff9-614x921.jpg" alt="Jean-Paul Marin, président du club" style="width:110px;height:110px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <h4 style="margin:0 0 2px;color:#062D63;">Jean-Paul Marin</h4>
+            <p style="margin:0 0 12px;color:#8a97ab;">Président du club</p>
+            <p style="margin:0 0 4px;color:#5a6a7a;"><span class="fa fa-phone" style="color:#20C4D8;width:20px;"></span> <a href="callto:#0763907306" style="color:#4a5a6a;">07 63 90 73 06</a></p>
+            <p style="margin:0;color:#5a6a7a;"><span class="fa fa-envelope-o" style="color:#20C4D8;width:20px;"></span> <a href="mailto:jp.mar1@wanadoo.fr" style="color:#4a5a6a;">jp.mar1@wanadoo.fr</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='\u2190 Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>
