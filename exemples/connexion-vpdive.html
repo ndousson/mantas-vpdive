@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Démo — Écran « Connexion / Inscription » VP Dive (stylisé)</title>
+<style>
+  :root{
+    --bleu:#062D63; --cyan:#20C4D8; --bleu-med:#0E66A9;
+    --gris:#5a6a7a; --gris-clair:#8a97ab; --fond:#eef6fb; --bord:#e3ecf3;
+    --ombre:0 10px 30px rgba(6,45,99,.08);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Roboto","Segoe UI",system-ui,sans-serif;color:#243746;background:var(--fond);}
+  header{background:linear-gradient(120deg,var(--bleu-med),var(--bleu));color:#fff;padding:34px 24px;text-align:center;}
+  header h1{margin:0 0 6px;font-family:"Montserrat",sans-serif;font-weight:700;font-size:22px;}
+  header h1 span{color:var(--cyan);}
+  header p{margin:0;color:rgba(255,255,255,.85);font-size:13px;max-width:680px;margin:8px auto 0;line-height:1.6;}
+  header code{background:rgba(255,255,255,.14);padding:1px 6px;border-radius:5px;}
+  main{max-width:520px;margin:0 auto;padding:36px 18px 64px;}
+  .state-label{margin:30px 0 10px;color:var(--gris-clair);font:700 11px/1 "Montserrat",sans-serif;text-transform:uppercase;letter-spacing:.06em;}
+  .state-label:first-child{margin-top:0;}
+
+  /* --- Carte (panel panel-primary) --- */
+  .panel{background:#fff;border:1px solid var(--bord);border-radius:16px;box-shadow:var(--ombre);overflow:hidden;}
+  .panel-heading{background:linear-gradient(160deg,var(--bleu-med),var(--bleu));color:#fff;padding:20px 26px;}
+  .panel-heading h3{margin:0;font-family:"Montserrat",sans-serif;font-weight:700;font-size:18px;display:flex;align-items:center;gap:12px;}
+  .panel-body{padding:26px;}
+  .panel-body label{display:block;margin:0 0 8px;color:var(--bleu);font-weight:600;font-size:14px;}
+  .panel-body input{
+    width:100%;border:1.5px solid #d9e3ec;border-radius:11px;background:#fbfdff;padding:13px 14px;
+    font-size:15px;font-family:inherit;color:#243746;outline:none;transition:border-color .15s, box-shadow .15s;
+  }
+  .panel-body input:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(32,196,216,.14);}
+  .panel-footer{padding:0 26px 26px;text-align:right;}
+  .btn-next{
+    display:inline-flex;align-items:center;gap:9px;border:0;cursor:pointer;background:var(--cyan);color:#fff;
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:14px;padding:12px 26px;border-radius:999px;
+    box-shadow:0 8px 22px rgba(32,196,216,.35);transition:background .15s, transform .05s;
+  }
+  .btn-next:hover{background:#12b2c6;}
+  .btn-next:active{transform:translateY(1px);}
+
+  /* Erreur (#register_content_error) */
+  .alert-err{
+    display:flex;gap:12px;align-items:flex-start;background:#fdecea;border:1px solid #f3c5c0;color:#9c2f25;
+    border-radius:11px;padding:14px 16px;font-size:14px;line-height:1.55;margin-bottom:18px;
+  }
+  .alert-err .fa{margin-top:3px;}
+
+  /* Chargement (#register_content_loading) */
+  .loader{display:flex;justify-content:center;gap:8px;padding:34px 0;}
+  .loader i{width:12px;height:12px;border-radius:50%;background:var(--cyan);animation:pulse 1s infinite ease-in-out;}
+  .loader i:nth-child(2){animation-delay:.15s;} .loader i:nth-child(3){animation-delay:.3s;}
+  @keyframes pulse{0%,80%,100%{transform:scale(.5);opacity:.4;} 40%{transform:scale(1);opacity:1;}}
+
+  .note{margin-top:34px;font-size:12.5px;color:var(--gris);line-height:1.7;background:#fff;border:1px solid var(--bord);border-radius:12px;padding:16px 20px;}
+  .note b{color:var(--bleu);}
+  .fa{font-family:"FontAwesome";}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+  <h1>Écran « <span>Connexion / Inscription</span> » VP Dive — proposition stylisée</h1>
+  <p>Reproduction de l'écran natif <code>/login</code> (carte « S'enregistrer », saisie de l'adresse mail puis « Suivant ») — habillé à la charte MANTAS 86. C'est une <b>page plateforme</b> : la maquette ne fixe que le style, le fonctionnement reste géré par VP Dive.</p>
+</header>
+<main>
+
+  <p class="state-label">État initial</p>
+  <div class="panel">
+    <div class="panel-heading"><h3><span class="fa fa-lock"></span> S'enregistrer</h3></div>
+    <div class="panel-body">
+      <label for="reg-mail">Saisir votre adresse mail</label>
+      <input id="reg-mail" type="email" placeholder="Adresse mail" />
+    </div>
+    <div class="panel-footer"><button class="btn-next" type="button"><span class="fa fa-angle-right"></span> Suivant</button></div>
+  </div>
+
+  <p class="state-label">État erreur</p>
+  <div class="panel">
+    <div class="panel-heading"><h3><span class="fa fa-lock"></span> S'enregistrer</h3></div>
+    <div class="panel-body">
+      <div class="alert-err"><span class="fa fa-warning"></span><span>Impossible de valider votre email. Merci de vérifier qu'il s'agit bien d'une adresse mail correcte sinon contactez le support.</span></div>
+      <label for="reg-mail-err">Saisir votre adresse mail</label>
+      <input id="reg-mail-err" type="email" value="adresse@invalide" />
+    </div>
+    <div class="panel-footer"><button class="btn-next" type="button"><span class="fa fa-angle-right"></span> Suivant</button></div>
+  </div>
+
+  <p class="state-label">État chargement</p>
+  <div class="panel">
+    <div class="panel-heading"><h3><span class="fa fa-lock"></span> S'enregistrer</h3></div>
+    <div class="panel-body"><div class="loader"><i></i><i></i><i></i></div></div>
+  </div>
+
+  <div class="note">
+    <b>Note pour l'équipe VP Dive.</b> Maquette de style pour l'écran <code>/login</code>. Structure d'origine
+    conservée&nbsp;: <code>#register_content</code> &gt; <code>.panel.panel-primary</code> (en-tête avec cadenas + titre
+    « S'enregistrer », corps, pied avec le bouton « Suivant »), message d'erreur
+    <code>#register_content_error</code> et loader <code>#register_content_loading</code>. Les étapes suivantes
+    du parcours (mot de passe, création de compte) n'ont pas été reproduites&nbsp;: à habiller de la même façon.
+    Proposés à la charte&nbsp;: en-tête dégradé, champ à focus cyan, bouton « Suivant » en pastille cyan,
+    erreur en encart rouge doux, loader cyan.
+  </div>
+</main>
+
+<!-- NAV LOCALE (dev only) — retour index ; ne s'affiche qu'en localhost -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

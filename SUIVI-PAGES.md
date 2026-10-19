@@ -108,6 +108,8 @@ Le site est passé en **V5** (URLs `/v5/public/<slug>`). 16 pages n'existaient p
 | Comité Directeur | `comite-directeur` | espace docs CoDir (≠ page « Comité » trombinoscope) — ✅ **HABILLÉE** (`2026/comite-directeur.html`, jumelle de Membres) : hero + intro + tableau docs = **MOCK de style** (données fictives, navigation multi-niveaux illustrée) car dynamique/gros volume + tableau « Liens & références » (2 liens Honorabilité réels) |
 | Encadrants | `encadrants` | espace docs encadrants (~196 fichiers) — ✅ **HABILLÉE** (`2026/encadrants.html`, jumelle Membres/CoDir) : hero + intro + tableau docs = MOCK de style (navigation multi-niveaux) + tableau « Liens & références » avec **10 liens réels** (6 Google Sheets suivi/surveillance + MFT + honorabilité + Charte 50m) |
 | Gonflage | `gonflage` | PDF tours de gonflage par saison — ✅ **HABILLÉE** (`2026/gonflage.html`) : hero + intro + **2 blocs distincts** : (a) carte « à la une » = 1 lien **Google Sheets** planning saison + (b) tableau **archives PDF** (composant `documents-variant-8`, dynamique). Mock de style. |
+| Inscription (club) | `/w/inscription` | page de contenu — ✅ **FAIT** (`2026/inscription.html`) : hero + bouton Tarifs + 2 parcours (nouveau / déjà connecté) en cartes de même hauteur, aperçus recréés en HTML (bouton « Connexion », encart « Campagne d'adhésion disponible »). |
+| Connexion / Inscription site | `/login` | **page plateforme** (non intégrable) — ✅ maquette de style `exemples/connexion-vpdive.html` (états initial / erreur / chargement) pour VP Dive. |
 | Politique de confidentialité | `politique-de-confidentialite` | **VIDE en V5** (contenu non migré) |
 
 **Décisions de tri (2026-08-10)** — pages V5 à TRAITER : ~~`liens-utiles`~~ (✅ fusionnée dans

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Procédure d'inscription — MANTAS 86</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/novi.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+</head>
+<body data-turbo="false"><div class="page text-center">
+
+<!-- =========================================================================
+     MANTAS 86 — PAGE "PROCÉDURE D'INSCRIPTION" (page de contenu /w/inscription)
+     - Style INLINE uniquement (VP Dive ne garde pas les blocs <style>).
+     - 2 parcours (nouveau / déjà connecté), cartes de MÊME HAUTEUR (.row forcée en flex).
+     - Les aperçus (menu "Connexion", encart "Campagne d'adhésion") sont RECRÉÉS en
+       HTML/CSS : ce ne sont pas de vraies captures, juste une aide visuelle.
+     - Hero : image Unsplash placeholder (TODO-IMAGE) à valider.
+     ========================================================================= -->
+
+<!-- ============================ 1. HERO ============================ -->
+<!-- TODO-IMAGE : image sobre en lien avec la plongée / l'accueil au club -->
+<section class="section bg-image novi-background context-dark cta-wrap text-center" style="position:relative; min-height:340px; background-color:#062D63; background-image:url('https://images.unsplash.com/photo-1559825481-12a05cc00344?w=1600&amp;q=80&amp;auto=format&amp;fit=crop'); background-position:center center; background-size:cover; background-repeat:no-repeat;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,99,.78) 0%,rgba(6,45,99,.45) 55%,rgba(6,45,99,.15) 100%);"></div>
+  <div class="container context-dark text-center" style="position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;">
+        <hr class="divider-sm" style="background:#20C4D8;border-color:#20C4D8;margin-bottom:20px;">
+        <h1 style="text-transform:uppercase;letter-spacing:.02em;margin:0 0 16px;color:#fff;font-weight:300;">Procédure <span style="color:#20C4D8;">d'inscription</span></h1>
+        <p class="subtitle-variant-3" style="margin:0;color:rgba(255,255,255,.92);font-weight:400;">À partir du 1er septembre</p>
+        <div style="margin-top:26px;">
+          <a class="btn btn-lg btn-effect-ujarak" href="#" style="background:#20C4D8;border:2px solid #20C4D8;color:#062D63;font-weight:700;margin:0;"><span>Tarifs 2026-2027</span></a>
+        </div>
+  </div>
+</section>
+
+<!-- ============================ 2. INTRO ============================ -->
+<section class="section novi-background" style="padding:64px 0 24px;background:#ffffff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h2 style="color:#062D63;letter-spacing:-.01em;margin:0;">Avant tout, il faut se connecter</h2>
+        <hr class="divider-sm" style="width:60px;height:3px;border:0;background:#20C4D8;margin:18px auto 0;">
+        <p style="color:#5a6a7a;margin:22px 0 0;line-height:1.9;">L'inscription commence toujours par votre compte <strong style="color:#062D63;">VPDive</strong>. Selon votre situation, suivez l'un des deux parcours ci-dessous.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. LES 2 PARCOURS ============================ -->
+<section class="section novi-background" style="padding:40px 0 64px;background:#eef6fb;">
+  <div class="container">
+    <!-- .row forcée en flex => cartes de même hauteur (le thème rend .row en block) -->
+    <div class="row justify-content-center" style="display:flex;flex-wrap:wrap;align-items:stretch;">
+
+      <!-- ---- Parcours A : nouveau sur le site ---- -->
+      <div class="col-sm-12 col-lg-6" style="display:flex;margin-bottom:30px;">
+        <div style="display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid #eef1f5;border-top:4px solid #20C4D8;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);padding:30px 28px;text-align:left;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:#eaf5fb;color:#0E66A9;font-size:20px;flex:none;"><span class="fa fa-user-plus"></span></span>
+            <h4 style="margin:0;color:#062D63;">Vous êtes nouveau sur le site</h4>
+          </div>
+
+          <div style="display:flex;gap:14px;margin-bottom:16px;">
+            <span style="flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;font:700 13px/28px Montserrat,sans-serif;text-align:center;">1</span>
+            <p style="margin:0;color:#5a6a7a;line-height:1.7;">Cliquez sur <strong style="color:#062D63;">« Connexion »</strong> dans le menu du site&nbsp;: vous arrivez sur le formulaire de connexion.</p>
+          </div>
+          <div style="display:flex;gap:14px;margin-bottom:16px;">
+            <span style="flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;font:700 13px/28px Montserrat,sans-serif;text-align:center;">2</span>
+            <p style="margin:0;color:#5a6a7a;line-height:1.7;">Cliquez sur <strong style="color:#062D63;">« Vous n'avez pas encore de compte&nbsp;? S'inscrire »</strong>.</p>
+          </div>
+          <div style="display:flex;gap:14px;margin-bottom:16px;">
+            <span style="flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;font:700 13px/28px Montserrat,sans-serif;text-align:center;">3</span>
+            <p style="margin:0;color:#5a6a7a;line-height:1.7;">Remplissez le <strong style="color:#062D63;">formulaire d'inscription VPDive</strong> (adresse mail, mot de passe), puis renseignez votre profil.</p>
+          </div>
+          <div style="display:flex;gap:14px;margin-bottom:24px;">
+            <span style="flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;font:700 13px/28px Montserrat,sans-serif;text-align:center;">4</span>
+            <p style="margin:0;color:#5a6a7a;line-height:1.7;">Une fois le compte créé, la <strong style="color:#062D63;">campagne d'adhésion se lance automatiquement</strong>. Si ce n'est pas le cas, vous êtes redirigé vers l'accueil VPDive du club&nbsp;: suivez alors le parcours <strong style="color:#062D63;">« Vous vous êtes déjà connecté »</strong>.</p>
+          </div>
+
+          <!-- Aperçu : le bouton "Connexion" du menu du site -->
+          <div style="margin-top:auto;">
+            <p style="margin:0 0 8px;color:#8a97ab;font:700 11px/1 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.06em;">Où cliquer ?</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;background:#fff;border:1px solid #e3ecf3;border-radius:12px;padding:12px 16px;font-size:13px;color:#243746;">
+              <span style="color:#8a97ab;">Accueil&nbsp;&nbsp;·&nbsp;&nbsp;Baptême&nbsp;&nbsp;·&nbsp;&nbsp;Le Club&nbsp;&nbsp;·&nbsp;&nbsp;Contact</span>
+              <span style="display:inline-flex;align-items:center;gap:7px;border:2px solid #20C4D8;border-radius:999px;padding:5px 12px;color:#062D63;font-weight:700;"><span class="fa fa-lock"></span> Connexion</span>
+            </div>
+            <div style="margin-top:12px;background:#fff;border:1px solid #e3ecf3;border-radius:12px;padding:12px 16px;font-size:13px;color:#5a6a7a;text-align:center;">
+              Vous n'avez pas encore de compte&nbsp;? <span style="color:#0E66A9;font-weight:700;text-decoration:underline;">S'inscrire</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Parcours B : déjà connecté ---- -->
+      <div class="col-sm-12 col-lg-6" style="display:flex;margin-bottom:30px;">
+        <div style="display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid #eef1f5;border-top:4px solid #0E66A9;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,99,.08);padding:30px 28px;text-align:left;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:#eaf5fb;color:#0E66A9;font-size:20px;flex:none;"><span class="fa fa-sign-in"></span></span>
+            <h4 style="margin:0;color:#062D63;">Vous vous êtes déjà connecté</h4>
+          </div>
+
+          <div style="display:flex;gap:14px;margin-bottom:16px;">
+            <span style="flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;font:700 13px/28px Montserrat,sans-serif;text-align:center;">1</span>
+            <p style="margin:0;color:#5a6a7a;line-height:1.7;">Connectez-vous à <strong style="color:#062D63;">VPDive</strong>.</p>
+          </div>
+          <div style="display:flex;gap:14px;margin-bottom:16px;">
+            <span style="flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;font:700 13px/28px Montserrat,sans-serif;text-align:center;">2</span>
+            <p style="margin:0;color:#5a6a7a;line-height:1.7;">Sur l'accueil VPDive du club, un encart <strong style="color:#062D63;">« Campagne d'adhésion disponible »</strong> vous permet de gérer votre adhésion.</p>
+          </div>
+          <div style="display:flex;gap:14px;margin-bottom:24px;">
+            <span style="flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(160deg,#0E66A9,#062D63);color:#fff;font:700 13px/28px Montserrat,sans-serif;text-align:center;">3</span>
+            <p style="margin:0;color:#5a6a7a;line-height:1.7;">Vous pouvez aussi y accéder depuis l'icône <strong style="color:#062D63;">« Adhésion »</strong> du menu latéral. L'encart et l'icône disparaissent une fois votre adhésion réalisée.</p>
+          </div>
+
+          <!-- Aperçu : l'encart "Campagne d'adhésion disponible" + l'icône "Adhésion" du menu latéral -->
+          <div style="margin-top:auto;">
+            <p style="margin:0 0 8px;color:#8a97ab;font:700 11px/1 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.06em;">Ce que vous verrez</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;background:#fdf6e8;border:1px solid #f0d9a8;border-radius:12px;padding:16px 18px;">
+              <div style="flex:1 1 220px;">
+                <p style="margin:0 0 4px;color:#7a4a12;font-weight:700;"><span class="fa fa-bullhorn" style="margin-right:8px;"></span>Campagne d'adhésion disponible</p>
+                <p style="margin:0;color:#8a5a1f;font-size:13px;line-height:1.5;">Inscriptions 2026/2027</p>
+              </div>
+              <span style="display:inline-block;background:#b9772f;color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:8px;">Voir la campagne</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;margin-top:12px;background:#fff;border:1px solid #e3ecf3;border-radius:12px;padding:12px 16px;">
+              <span style="position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:4px;color:#4a5a8a;font-size:12px;font-weight:600;">
+                <span style="position:relative;font-size:20px;line-height:1;"><span class="fa fa-bullhorn"></span><span style="position:absolute;top:-3px;right:-6px;width:8px;height:8px;border-radius:50%;background:#2f55c4;"></span></span>
+                Adhésion
+              </span>
+              <span style="color:#5a6a7a;font-size:13px;line-height:1.5;">Icône du menu latéral&nbsp;: elle ouvre la campagne d'adhésion tant que celle-ci n'a pas été réalisée.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+<script src="../assets/js/core.min.js"></script><script src="../assets/js/script.js"></script>
+
+<!-- ============================ NAV LOCALE (dev only) — retour index ============================ -->
+<!-- Bouton "retour index" affiché UNIQUEMENT en local (localhost/127.0.0.1). NE PAS coller dans VP Dive. -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'){
+    var a=document.createElement('a');
+    a.href='/index.html';
+    a.textContent='← Index';
+    a.style.cssText='position:fixed;top:14px;left:14px;z-index:9999;background:#062D63;color:#fff;font:600 13px/1 Roboto,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(6,45,99,.35);';
+    a.addEventListener('click',function(){try{var seg=location.pathname.split('/').filter(Boolean)[0];if(seg)localStorage.setItem('mantas.folder',seg);}catch(e){}});
+    document.body.appendChild(a);
+  }
+})();
+</script>
+</body></html>

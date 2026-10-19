@@ -11,3 +11,9 @@ node_modules/
 
 # Logs / temporaires
 *.log
+
+# Captures de travail (données réelles) — ne pas publier
+*.tif
+*.tiff
+menu connection.jpg
+nouveau espace membre.jpg
